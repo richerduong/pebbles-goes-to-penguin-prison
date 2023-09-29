@@ -196,5 +196,5 @@ position = Vector2(167, 171)
 
 [node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_yvnlm")
-volume_db = -8.901
+volume_db = -14.054
 autoplay = true

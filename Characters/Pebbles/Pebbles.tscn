@@ -207,4 +207,4 @@ volume_db = 7.924
 
 [node name="gunShot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_afbpb")
-volume_db = -0.495
+volume_db = -11.39
