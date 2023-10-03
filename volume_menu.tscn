@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://4kvf0i7i3vq2"]
+
+[ext_resource type="Script" path="res://volume_menu.gd" id="1_vqcxk"]
+[ext_resource type="Texture2D" uid="uid://dkcr66ikevr8j" path="res://temp_volume_screen.PNG" id="2_tw1di"]
+[ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Theme.tres" id="3_4xsmu"]
+[ext_resource type="PackedScene" uid="uid://5f23ealuf8lh" path="res://volume_slider.tscn" id="4_7kobj"]
+
+[node name="volume_menu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vqcxk")
+
+[node name="TempOptionsScreen" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, 0.499956)
+scale = Vector2(0.653144, 0.653986)
+texture = ExtResource("2_tw1di")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -89.0
+offset_top = -83.0
+offset_right = 100.0
+offset_bottom = 121.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="master_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4xsmu")
+theme_override_colors/font_color = Color(0.537255, 0.52549, 0.968627, 1)
+theme_override_font_sizes/font_size = 15
+text = "Master Volume"
+
+[node name="master_vol" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_7kobj")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="background_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4xsmu")
+theme_override_colors/font_color = Color(0.537255, 0.52549, 0.968627, 1)
+theme_override_font_sizes/font_size = 15
+text = "Background"
+
+[node name="background_vol" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_7kobj")]
+layout_mode = 2
+bus_name = "Background"
+
+[node name="soundeffects_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4xsmu")
+theme_override_colors/font_color = Color(0.537255, 0.52549, 0.968627, 1)
+theme_override_font_sizes/font_size = 15
+text = "Sound Effects"
+
+[node name="soundeffects_vol" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_7kobj")]
+layout_mode = 2
+bus_name = "Sound Effects"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_4xsmu")
+theme_override_colors/font_color = Color(0.537255, 0.52549, 0.968627, 1)
+theme_override_font_sizes/font_size = 20
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

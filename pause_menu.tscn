@@ -20,6 +20,7 @@ scale = Vector2(0.653144, 0.653986)
 texture = ExtResource("2_1t7dn")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_left = -89.0
 offset_top = -55.0
 offset_right = 100.0
@@ -61,4 +62,5 @@ text = "Quit"
 flat = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

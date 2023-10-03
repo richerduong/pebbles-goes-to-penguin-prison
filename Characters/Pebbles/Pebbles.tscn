@@ -265,9 +265,11 @@ one_shot = true
 [node name="walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_3mnqa")
 volume_db = 7.924
+bus = &"Sound Effects"
 
 [node name="gunShot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_afbpb")
-volume_db = -0.495
+volume_db = -9.228
+bus = &"Sound Effects"
 
 [connection signal="area_entered" from="Sprite2D/Slap" to="." method="_on_slap_area_entered"]
