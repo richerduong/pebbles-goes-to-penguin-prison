@@ -58,6 +58,7 @@ theme_override_font_sizes/font_size = 30
 text = "Back to Menu"
 flat = true
 
+<<<<<<< Updated upstream
 [node name="TempTitleScreen" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(960, 538)
@@ -65,3 +66,7 @@ scale = Vector2(1.94529, 1.94946)
 texture = ExtResource("4_o3sjc")
 
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Back" to="." method="_on_back_pressed"]
+=======
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+>>>>>>> Stashed changes
