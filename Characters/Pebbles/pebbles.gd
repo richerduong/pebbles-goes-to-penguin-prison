@@ -102,9 +102,9 @@ func _on_slap_area_entered(area):
 	if area.is_in_group("hurtbox"):
 		area.take_damage()
 
-func take_damage(damage: int) -> void:
+func take_damage(damage_taken: int) -> void:
 	#damage is only going to be 1 for pebbles 
-	health -= 1
+	health -= damage_taken
 	
 	#enemy_attack_cooldown = false
 	# $attack_cooldown.start()

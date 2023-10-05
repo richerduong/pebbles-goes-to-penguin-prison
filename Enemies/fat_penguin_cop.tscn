@@ -164,7 +164,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_matj5"]
-radius = 319.061
+radius = 225.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ybixe"]
 height = 34.0
@@ -199,7 +199,7 @@ offset_right = 94.0
 offset_bottom = 8.0
 scale = Vector2(0.2, 0.2)
 theme = ExtResource("3_g3ud3")
-max_value = 250.0
+max_value = 20.0
 show_percentage = false
 
 [node name="RegenTimer" type="Timer" parent="."]
@@ -210,10 +210,9 @@ autostart = true
 wait_time = 0.2
 
 [node name="Shotgun" parent="." node_paths=PackedStringArray("user") instance=ExtResource("13_oj4g5")]
-position = Vector2(0, 8)
+position = Vector2(0, 7)
 offset = Vector2(8, 2.08165e-12)
 user = NodePath("..")
-bullet_scene = ExtResource("2_81ude")
 
 [node name="Cop_Hitbox" type="Area2D" parent="."]
 

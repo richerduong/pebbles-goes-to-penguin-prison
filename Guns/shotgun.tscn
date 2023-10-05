@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://w6vnu6g7xefs"]
+[gd_scene load_steps=4 format=3 uid="uid://w6vnu6g7xefs"]
 
 [ext_resource type="Texture2D" uid="uid://b6sb5ingbsp6k" path="res://Guns/shotgun.png" id="1_memvc"]
 [ext_resource type="Script" path="res://Guns/shotgun.gd" id="2_xiheq"]
+[ext_resource type="PackedScene" uid="uid://dv75t1glvbda2" path="res://Guns/Bullets/Bullet.tscn" id="3_w0e0s"]
 
 [node name="Shotgun" type="Sprite2D"]
 texture = ExtResource("1_memvc")
 offset = Vector2(5, 2)
 script = ExtResource("2_xiheq")
+bullet_scene = ExtResource("3_w0e0s")
 
 [node name="Muzzle" type="Node2D" parent="."]
 position = Vector2(25, 0)

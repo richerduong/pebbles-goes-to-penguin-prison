@@ -1,19 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://ktujw2iocqb3"]
 
-[ext_resource type="Texture2D" uid="uid://456sgy3xdq6t" path="res://Tilesheets/prison-tileset.png" id="1_cd1gj"]
-[ext_resource type="Script" path="res://Scenes/destructible_scene.gd" id="1_rd7ad"]
+[ext_resource type="Script" path="res://Objects/destructible_scene.gd" id="1_s71ld"]
+[ext_resource type="Texture2D" uid="uid://456sgy3xdq6t" path="res://Tilesheets/prison-tileset.png" id="2_m27sn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u8o1m"]
 radius = 13.0
 height = 34.0
 
-[node name="Toilet" type="RigidBody2D"]
-gravity_scale = 2.66454e-15
-lock_rotation = true
-script = ExtResource("1_rd7ad")
+[node name="Toilet" type="StaticBody2D"]
+script = ExtResource("1_s71ld")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cd1gj")
+texture = ExtResource("2_m27sn")
 hframes = 11
 vframes = 9
 frame = 35

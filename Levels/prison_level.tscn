@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://rmujglsn8iev" path="res://User Interface/UI.tscn" id="1_hmlgx"]
 [ext_resource type="Texture2D" uid="uid://456sgy3xdq6t" path="res://Tilesheets/prison-tileset.png" id="1_qtpx2"]
-[ext_resource type="PackedScene" uid="uid://dqm2yvq2vyimg" path="res://Scenes/Bed.tscn" id="3_id7cy"]
-[ext_resource type="PackedScene" uid="uid://ktujw2iocqb3" path="res://Scenes/Toilet.tscn" id="4_om7kv"]
-[ext_resource type="PackedScene" uid="uid://w6i02hhlrsuh" path="res://Objects/Resources/resource_node_rock_tall.tscn" id="4_xdcdu"]
+[ext_resource type="PackedScene" uid="uid://dqm2yvq2vyimg" path="res://Objects/Bed.tscn" id="3_id7cy"]
+[ext_resource type="PackedScene" uid="uid://ktujw2iocqb3" path="res://Objects/Toilet.tscn" id="4_om7kv"]
+[ext_resource type="PackedScene" uid="uid://w6i02hhlrsuh" path="res://Objects/Barrel.tscn" id="4_xdcdu"]
 [ext_resource type="PackedScene" uid="uid://tdf8iqs82nqm" path="res://Characters/Pebbles/Pebbles.tscn" id="5_aw3i6"]
 [ext_resource type="PackedScene" uid="uid://cfyn5xxip2okh" path="res://Enemies/fat_penguin_cop.tscn" id="6_ignc1"]
 [ext_resource type="Script" path="res://Characters/camera_movement.gd" id="6_pje2u"]
@@ -31,27 +31,6 @@ func _ready():
 
 func _physics_process(_delta):
 	pass
-	
-#func _process(_delta):
-#	if Input.is_action_just_pressed(\"pause\"):
-#		pause()
-		
-#func pause():
-#	get_tree().paused = true
-#	for child in get_children():
-#		child.hide()
-#	$Camera2D.show()
-#	$Camera2D/pause_menu.show()
-
-#func unpause():
-#	for child in get_children():
-#		child.show()
-#	$Camera2D/pause_menu.hide()
-#	get_tree().paused = false
-
-
-	
-	
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbd6w"]
@@ -585,19 +564,19 @@ position = Vector2(521, 326)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Fat Penguin Cop" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("6_ignc1")]
-position = Vector2(77, 691)
+position = Vector2(-26, 364)
 player = NodePath("../../Pebbles")
 
 [node name="Fat Penguin Cop2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("6_ignc1")]
-position = Vector2(487, 657)
+position = Vector2(457, 376)
 player = NodePath("../../Pebbles")
 
 [node name="Fat Penguin Cop3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("6_ignc1")]
-position = Vector2(11, 422)
+position = Vector2(62, 637)
 player = NodePath("../../Pebbles")
 
 [node name="Fat Penguin Cop4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("6_ignc1")]
-position = Vector2(426, 281)
+position = Vector2(428, 648)
 player = NodePath("../../Pebbles")
 
 [connection signal="pressed" from="PauseMenu/Pause/MarginContainer/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]

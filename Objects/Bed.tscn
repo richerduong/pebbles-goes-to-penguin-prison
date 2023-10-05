@@ -1,18 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqm2yvq2vyimg"]
 
-[ext_resource type="Script" path="res://Scenes/destructible_scene.gd" id="1_htcy7"]
-[ext_resource type="Texture2D" uid="uid://456sgy3xdq6t" path="res://Tilesheets/prison-tileset.png" id="1_otf2s"]
+[ext_resource type="Script" path="res://Objects/destructible_scene.gd" id="1_nygs8"]
+[ext_resource type="Texture2D" uid="uid://456sgy3xdq6t" path="res://Tilesheets/prison-tileset.png" id="2_kfdqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jp1w"]
 size = Vector2(36, 42)
 
-[node name="Bed" type="RigidBody2D"]
-gravity_scale = 2.66454e-15
-lock_rotation = true
-script = ExtResource("1_htcy7")
+[node name="Bed" type="StaticBody2D"]
+script = ExtResource("1_nygs8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_otf2s")
+texture = ExtResource("2_kfdqa")
 hframes = 11
 vframes = 9
 frame = 36

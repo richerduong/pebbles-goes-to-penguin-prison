@@ -245,7 +245,6 @@ shape = SubResource("RectangleShape2D_ckj3u")
 position = Vector2(0, 6)
 offset = Vector2(8, 2.08165e-12)
 user = NodePath("..")
-bullet_scene = ExtResource("2_nt858")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
