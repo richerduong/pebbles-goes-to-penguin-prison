@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var health: int = max_health
 @onready var gunShot = $gunShot
 @onready var gameOver = $GameOverScreen
+@onready var shot_cooldown: Timer = $ShootCooldown
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
@@ -52,6 +53,9 @@ func _physics_process(_delta):
 			$walking.play()
 			$Timer.start(0.2)
 	
+	if get_node_or_null("Gun") != null:
+		$Gun.aim_at(get_global_mouse_position())
+		sprite_2d.flip_h = $Gun.flip_v
 	
 	move_and_slide()
 	pick_new_animation_state()
@@ -80,30 +84,16 @@ func pick_new_animation_state():
 		animation_tree["parameters/conditions/moving"] = true
 
 func shoot():
-	if !$ShootCooldown.is_stopped():
-		print($ShootCooldown.time_left)
+	if !shot_cooldown.is_stopped():
 		return
-	$ShootCooldown.start()
+	shot_cooldown.start()
 	if ammo <= 0: return
 	ammo -= 1
 	pebbles_shoot.emit(ammo)
 	
 	gunShot.play()
-	var bullet1: Area2D = bullet_scene.instantiate()
-	var bullet2: Area2D = bullet_scene.instantiate()
-	var bullet3: Area2D = bullet_scene.instantiate()
-
-	bullet1.global_position = get_node("Gun/Muzzle").global_position
-	bullet2.global_position = get_node("Gun/Muzzle").global_position
-	bullet3.global_position = get_node("Gun/Muzzle").global_position
-	
-	bullet1.rotation = get_node("Gun").rotation + 0.1 
-	bullet2.rotation = get_node("Gun").rotation
-	bullet3.rotation = get_node("Gun").rotation - 0.1
-	
-	owner.add_child(bullet1)
-	owner.add_child(bullet2)
-	owner.add_child(bullet3)
+	if get_node_or_null("Gun") != null:
+		$Gun.shoot()
 	
 func slap():
 	$AnimationPlayer.play("slap")

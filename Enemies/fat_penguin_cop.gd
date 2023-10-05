@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
 @export var bullet_scene: PackedScene
+@export var player: CharacterBody2D
 
-
-var player
 var speed = 200
 var pebbles_chase = false
 var pebbles = null
@@ -13,6 +12,8 @@ var can_shoot = true
 # Hit Flash Shader
 @onready var sprite = $AnimatedSprite2D
 @onready var flashTimer = $FlashHitTimer
+@onready var shotgun = $Shotgun
+@onready var reload_timer = $Reload_Timer
 
 # Combat
 var pebbles_inattack_zone = false
@@ -23,9 +24,9 @@ func _ready():
 	
 func _physics_process(_delta):
 	update_health()
+	shotgun.aim_at(player.global_position)
 	
 	if pebbles_chase:
-		player = get_node("../Pebbles")
 		shoot_pebbles()
 		position += (pebbles.position - position)/speed
 		$AnimatedSprite2D.play("running")
@@ -92,28 +93,9 @@ func fat_penguin_cop():
 	
 	
 func shoot_pebbles():
-	if can_shoot == true:
-		var bullet1: Area2D = bullet_scene.instantiate()
-		var bullet2: Area2D = bullet_scene.instantiate()
-		var bullet3: Area2D = bullet_scene.instantiate()
-		
-		bullet1.global_position = get_node("Shotgun/Muzzle").global_position
-		bullet2.global_position = get_node("Shotgun/Muzzle").global_position
-		bullet3.global_position = get_node("Shotgun/Muzzle").global_position
-		
-		bullet1.look_at(player.global_position)  # Rotate the bullet towards the player's position
-		bullet2.look_at(player.global_position)  # Rotate the bullet towards the player's position
-		bullet3.look_at(player.global_position)  # Rotate the bullet towards the player's position
-		
-		bullet1.rotation = get_node("Shotgun").rotation + 0.1
-		bullet2.rotation = get_node("Shotgun").rotation
-		bullet3.rotation = get_node("Shotgun").rotation + -0.1
-		
-		owner.add_child(bullet1)
-		owner.add_child(bullet2)
-		owner.add_child(bullet3)
-		can_shoot = false
-		$Reload_Timer.start()
+	if reload_timer.is_stopped():
+		shotgun.shoot()
+		reload_timer.start()
 
 func _on_take_damage_cooldown_timeout():
 	can_take_damage = true

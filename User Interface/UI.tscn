@@ -34,7 +34,7 @@ offset_bottom = 6.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+[node name="Gun Sprite" type="Sprite2D" parent="Panel"]
 position = Vector2(25, 53)
 scale = Vector2(1.71875, 1.71875)
 texture = ExtResource("2_lmdw2")

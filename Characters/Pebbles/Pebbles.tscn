@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Characters/Pebbles/pebbles.gd" id="1_cxbe1"]
 [ext_resource type="PackedScene" uid="uid://dv75t1glvbda2" path="res://Guns/Bullets/Bullet.tscn" id="2_nt858"]
 [ext_resource type="Texture2D" uid="uid://bm87nqm22na2i" path="res://Characters/Pebbles/Sprites/pebbles-idle.png" id="2_oo8pk"]
-[ext_resource type="PackedScene" uid="uid://w6vnu6g7xefs" path="res://Guns/Gun.tscn" id="3_uhnfq"]
+[ext_resource type="PackedScene" uid="uid://w6vnu6g7xefs" path="res://Guns/shotgun.tscn" id="3_uhnfq"]
 [ext_resource type="Texture2D" uid="uid://d2c78aft3tu7e" path="res://Characters/Pebbles/Sprites/pebble-run.png" id="4_cnw0k"]
 [ext_resource type="AudioStream" uid="uid://h17pdkvnep5y" path="res://Audio/walkingtrim.mp3" id="6_3mnqa"]
 [ext_resource type="Texture2D" uid="uid://s8jme7fywmc" path="res://Characters/Pebbles/Sprites/pebbles_slap.png" id="6_gnr27"]
@@ -241,11 +241,11 @@ frame = 1
 position = Vector2(0.5, 2.5)
 shape = SubResource("RectangleShape2D_ckj3u")
 
-[node name="Gun" parent="." node_paths=PackedStringArray("sprite_2d", "player") instance=ExtResource("3_uhnfq")]
+[node name="Gun" parent="." node_paths=PackedStringArray("user") instance=ExtResource("3_uhnfq")]
 position = Vector2(0, 6)
 offset = Vector2(8, 2.08165e-12)
-sprite_2d = NodePath("../Sprite2D")
-player = NodePath("..")
+user = NodePath("..")
+bullet_scene = ExtResource("2_nt858")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
