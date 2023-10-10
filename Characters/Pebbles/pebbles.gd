@@ -120,6 +120,7 @@ func take_damage(damage: int) -> void:
 	# $attack_cooldown.start()
 	if health <= 0:
 		health = 0
+		play_death()
 		get_tree().paused = true
 		sprite_2d.visible = false
 		gameOver.visible = true
@@ -130,7 +131,11 @@ func take_damage(damage: int) -> void:
 
 func pebbles():
 	pass
-
+	
+func play_death():
+	$AnimationPlayer.play("death")
+	print("Death animation finished")
+	
 func _on_pebbles_hitbox_body_entered(body):
 	if body.has_method("fat_penguin_cop"):
 		enemy_inattack_range = true

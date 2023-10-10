@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://7yfwdhr36eyq"]
+[gd_scene load_steps=30 format=3 uid="uid://7yfwdhr36eyq"]
 
 [ext_resource type="PackedScene" uid="uid://rmujglsn8iev" path="res://User Interface/UI.tscn" id="1_hmlgx"]
 [ext_resource type="Texture2D" uid="uid://456sgy3xdq6t" path="res://Tilesheets/prison-tileset.png" id="1_qtpx2"]
@@ -401,6 +401,7 @@ position = Vector2(56, 317)
 position = Vector2(521, 326)
 
 [node name="Pebbles" parent="." instance=ExtResource("5_aw3i6")]
+position = Vector2(-2, -2)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
 visible = false
@@ -617,6 +618,7 @@ position = Vector2(396, 1165)
 
 [node name="seal-slap1" parent="." instance=ExtResource("13_kyrvk")]
 position = Vector2(35, 415)
+
 [node name="PolarBear" parent="." instance=ExtResource("14_1fwjd")]
 material = SubResource("ShaderMaterial_ymboh")
 position = Vector2(-84, 307)

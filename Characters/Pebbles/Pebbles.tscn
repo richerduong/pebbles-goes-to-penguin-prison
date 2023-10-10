@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://tdf8iqs82nqm"]
+[gd_scene load_steps=29 format=3 uid="uid://tdf8iqs82nqm"]
 
 [ext_resource type="Script" path="res://Characters/Pebbles/pebbles.gd" id="1_cxbe1"]
 [ext_resource type="PackedScene" uid="uid://dv75t1glvbda2" path="res://Guns/Bullets/Bullet.tscn" id="2_nt858"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2c78aft3tu7e" path="res://Characters/Pebbles/Sprites/pebble-run.png" id="4_cnw0k"]
 [ext_resource type="AudioStream" uid="uid://h17pdkvnep5y" path="res://Audio/walkingtrim.mp3" id="6_3mnqa"]
 [ext_resource type="Texture2D" uid="uid://s8jme7fywmc" path="res://Characters/Pebbles/Sprites/pebbles_slap.png" id="6_gnr27"]
+[ext_resource type="Texture2D" uid="uid://dc13b11gagerm" path="res://Characters/Pebbles/Sprites/pebbles_death.png" id="7_71h88"]
 [ext_resource type="AudioStream" uid="uid://d3wk2f2csw6x4" path="res://Audio/gunshot.mp3" id="7_afbpb"]
 [ext_resource type="PackedScene" uid="uid://ky0ajf56l7cj" path="res://game_over_screen.tscn" id="9_phe7c"]
 
@@ -54,6 +55,45 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_ictxy"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_71h88")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_0hiao"]
@@ -181,6 +221,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b2ap2"]
 _data = {
 "RESET": SubResource("Animation_pfgd8"),
+"death": SubResource("Animation_ictxy"),
 "idle": SubResource("Animation_0hiao"),
 "running": SubResource("Animation_gvmgd"),
 "slap": SubResource("Animation_kwo2w")
@@ -236,9 +277,10 @@ hframes = 3
 frame = 1
 
 [node name="Slap" type="Area2D" parent="Sprite2D"]
+position = Vector2(-7, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Slap"]
-position = Vector2(0.5, 2.5)
+position = Vector2(10, 41)
 shape = SubResource("RectangleShape2D_ckj3u")
 
 [node name="Gun" parent="." node_paths=PackedStringArray("sprite_2d", "player") instance=ExtResource("3_uhnfq")]
