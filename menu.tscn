@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://1gct8vkdfl7a" path="res://volume_slider.tscn" id="9_jjw07"]
 [ext_resource type="AudioStream" uid="uid://d4ib2wmobssvo" path="res://Audio/startSound.mp3" id="12_tav4u"]
 [ext_resource type="AudioStream" uid="uid://ca2uysq0dlhmw" path="res://Audio/selectSound.mp3" id="13_rtylw"]
+[ext_resource type="PackedScene" path="res://volume_slider.tscn" id="9_jjw07"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5hykk"]
 shader = ExtResource("2_rmub7")

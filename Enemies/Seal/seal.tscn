@@ -146,7 +146,7 @@ script = ExtResource("1_c2je5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_g3yn3")
 sprite_frames = SubResource("SpriteFrames_cefw2")
-animation = &"death"
+animation = &"slap"
 
 [node name="detection_radius" type="Area2D" parent="."]
 
@@ -197,6 +197,7 @@ wait_time = 0.2
 stream = ExtResource("7_j474t")
 volume_db = 1.0
 
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="detection_radius" to="." method="_on_detection_radius_body_entered"]
 [connection signal="body_entered" from="slap_radius" to="." method="_on_slap_radius_body_entered"]
 [connection signal="body_exited" from="slap_radius" to="." method="_on_slap_radius_body_exited"]

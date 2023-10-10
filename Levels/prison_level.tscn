@@ -637,28 +637,28 @@ text = "Back
 "
 
 [node name="polar_bear_slap" parent="." instance=ExtResource("14_1fwjd")]
-position = Vector2(396, 1165)
+position = Vector2(512, 1169)
 
 [node name="seal-slap1" parent="." instance=ExtResource("13_kyrvk")]
-position = Vector2(35, 415)
+position = Vector2(-47, 603)
 
 [node name="PolarBear" parent="." instance=ExtResource("14_1fwjd")]
 material = SubResource("ShaderMaterial_ymboh")
-position = Vector2(-84, 307)
+position = Vector2(258, 1115)
 
 [node name="Seal" parent="." instance=ExtResource("13_kyrvk")]
-position = Vector2(114, 348)
+position = Vector2(406, 294)
 
 [node name="PolarBear2" parent="." instance=ExtResource("14_1fwjd")]
 material = SubResource("ShaderMaterial_rn4th")
 position = Vector2(90, 738)
 
 [node name="Seal2" parent="." instance=ExtResource("13_kyrvk")]
-position = Vector2(560, 347)
+position = Vector2(456, 703)
 
 [node name="PolarBear3" parent="." instance=ExtResource("14_1fwjd")]
 material = SubResource("ShaderMaterial_50hvr")
-position = Vector2(-71, 561)
+position = Vector2(247, 599)
 
 [node name="PolarBear4" parent="." instance=ExtResource("14_1fwjd")]
 material = SubResource("ShaderMaterial_1fqv7")
@@ -669,7 +669,7 @@ position = Vector2(1050, 1073)
 
 [node name="PolarBear5" parent="." instance=ExtResource("14_1fwjd")]
 material = SubResource("ShaderMaterial_jq874")
-position = Vector2(287, 578)
+position = Vector2(133, 936)
 
 [node name="Fat Penguin Cop2" parent="." instance=ExtResource("6_ignc1")]
 position = Vector2(73, 1052)
@@ -721,7 +721,7 @@ position = Vector2(1038, 701)
 position = Vector2(-20, 1159)
 
 [node name="polar_bear_slap1" parent="." instance=ExtResource("14_1fwjd")]
-position = Vector2(409, 445)
+position = Vector2(247, 435)
 
 [node name="seal-gun2" parent="." instance=ExtResource("16_x8joo")]
 position = Vector2(776, 347)
@@ -736,7 +736,7 @@ position = Vector2(897, 485)
 position = Vector2(825, 1064)
 
 [node name="penguin_cop_slap" parent="." instance=ExtResource("18_8mmr7")]
-position = Vector2(150, 993)
+position = Vector2(-56, 299)
 
 [connection signal="pressed" from="PauseMenu/Pause/MarginContainer/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/MarginContainer/VBoxContainer/Volume" to="PauseMenu" method="_on_volume_pressed"]

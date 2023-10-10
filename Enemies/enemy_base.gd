@@ -53,6 +53,13 @@ func take_damage(damage: int) -> void:
 	health = max(health, 0) # Ensure health does not go below 0
 	update_health() # Update the health bar after changing health value
 	flash() # Flash hit
+	
+	# Make the enemy chase Pebbles when taking damage
+	if target == null or target.name != _get_target_name():
+		pebbles_chase = true
+		player = get_node("../" + _get_target_name())
+		target = player
+	
 	if health <= 0:
 		die()
 
@@ -76,7 +83,7 @@ func _on_AnimatedSprite2D_animation_finished():
 		queue_free()
 		
 func _on_slap_radius_body_entered(body):
-	if body.name == "Pebbles":
+	if body.name == "Pebbles" && health > 0:
 			inSlapRadius = true
 			target = body
 			attack()
@@ -91,7 +98,7 @@ func _on_slap_radius_body_exited(body):
 		
 
 func _on_slap_timer_timeout():
-	if inSlapRadius:
+	if inSlapRadius && health > 0:
 		attack()
 		
 func attack():

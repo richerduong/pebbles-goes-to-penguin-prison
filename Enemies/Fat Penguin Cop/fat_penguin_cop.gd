@@ -52,6 +52,7 @@ func take_damage(damage: int) -> void:
 	#take damage 
 	health -= damage
 	flash()
+	
 	#if health reaches 0 then delete from scene
 	if health <= 0:
 		$AnimatedSprite2D.play("death")  # Assumes the animation's name is "death"
