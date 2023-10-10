@@ -4,12 +4,14 @@ extends CharacterBody2D
 @export var ammo: int = 999
 @export var move_speed: float = 250
 @export var sprite_2d: Sprite2D
+@export var gun: Sprite2D
 @export var animation_tree: AnimationTree
 @export var bullet_scene: PackedScene
 @export var damage: int = 1
 @onready var health: int = max_health
 @onready var gunShot = $gunShot
 @onready var gameOver = $GameOverScreen
+@onready var animationPlayer = $AnimationPlayer
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
@@ -120,10 +122,8 @@ func take_damage(damage: int) -> void:
 	# $attack_cooldown.start()
 	if health <= 0:
 		health = 0
-		play_death()
-		get_tree().paused = true
-		sprite_2d.visible = false
-		gameOver.visible = true
+		animationPlayer.play("death")
+		$death_timer.start()
 		print("dead")
 		pebbles_death.emit()
 	print(health)
@@ -133,7 +133,7 @@ func pebbles():
 	pass
 	
 func play_death():
-	$AnimationPlayer.play("death")
+	animationPlayer.play("death")
 	print("Death animation finished")
 	
 func _on_pebbles_hitbox_body_entered(body):
@@ -148,3 +148,11 @@ func _on_pebbles_hitbox_body_exited(body):
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
 
+
+
+func _on_death_timer_timeout():
+	
+	sprite_2d.visible = false
+	gun.visible = false
+	get_tree().paused = true
+	gameOver.visible = true
