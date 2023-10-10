@@ -285,6 +285,7 @@ text = "Back
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_tav4u")
+volume_db = -6.09
 autoplay = true
 
 [node name="selectSound" type="AudioStreamPlayer" parent="."]
