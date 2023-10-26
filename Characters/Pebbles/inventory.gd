@@ -9,6 +9,12 @@ class Gun:
 	func _init(gun_scene: String, ammo: int):
 		__gun_scene = gun_scene
 		__ammo = ammo
+		
+	func get_gun_scene() -> String:
+		return __gun_scene
+	
+	func get_ammo() -> int:
+		return __ammo
 
 var __max_guns: int
 var __inventory: Array

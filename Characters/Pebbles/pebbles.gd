@@ -163,19 +163,16 @@ func _on_attack_cooldown_timeout():
 func equip_gun():
 	if Input.is_key_pressed(KEY_1):
 		equiped_gun_index = 0
-		ammo = inventory.__inventory[0].__ammo
-		print(inventory.__inventory[0].__ammo, " bullets")
+		ammo = inventory.get_gun(0).get_ammo()
 		pebbles_shoot.emit(ammo)
 	
 	if Input.is_key_pressed(KEY_2):
 		equiped_gun_index = 1
-		ammo = inventory.__inventory[1].__ammo
-		print(inventory.__inventory[1].__ammo, " bullets")
+		ammo = inventory.get_gun(1).get_ammo()
 		pebbles_shoot.emit(ammo)
 	
 	if Input.is_key_pressed(KEY_3):
 		equiped_gun_index = 2
-		ammo = inventory.__inventory[2].__ammo
-		print(inventory.__inventory[2].__ammo, " bullets")
+		ammo = inventory.get_gun(2).get_ammo()
 		pebbles_shoot.emit(ammo)
 		
