@@ -123,7 +123,11 @@ func take_damage(damage: int) -> void:
 	if health <= 0:
 		health = 0
 		animationPlayer.play("death")
-		$death_timer.start()
+		animationPlayer.stop()
+		animation_tree.active = false
+		gun.visible = false
+		get_tree().paused = true
+		gameOver.visible = true
 		print("dead")
 		pebbles_death.emit()
 	print(health)
@@ -149,10 +153,3 @@ func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
 
 
-
-func _on_death_timer_timeout():
-	
-	sprite_2d.visible = false
-	gun.visible = false
-	get_tree().paused = true
-	gameOver.visible = true

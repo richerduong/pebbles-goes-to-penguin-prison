@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2c78aft3tu7e" path="res://Characters/Pebbles/Sprites/pebble-run.png" id="4_cnw0k"]
 [ext_resource type="AudioStream" uid="uid://h17pdkvnep5y" path="res://Audio/walkingtrim.mp3" id="6_3mnqa"]
 [ext_resource type="Texture2D" uid="uid://s8jme7fywmc" path="res://Characters/Pebbles/Sprites/pebbles_slap.png" id="6_gnr27"]
-[ext_resource type="Texture2D" uid="uid://dc13b11gagerm" path="res://Characters/Pebbles/Sprites/pebbles_death.png" id="7_71h88"]
+[ext_resource type="Texture2D" path="res://Characters/Pebbles/Sprites/pebbles_death.png" id="7_71h88"]
 [ext_resource type="AudioStream" uid="uid://d3wk2f2csw6x4" path="res://Audio/gunshot.mp3" id="7_afbpb"]
 [ext_resource type="PackedScene" uid="uid://ky0ajf56l7cj" path="res://game_over_screen.tscn" id="9_phe7c"]
 
@@ -331,12 +331,7 @@ one_shot = true
 [node name="GameOverScreen" parent="." instance=ExtResource("9_phe7c")]
 visible = false
 
-[node name="death_timer" type="Timer" parent="."]
-wait_time = 0.3
-one_shot = true
-
 [connection signal="area_entered" from="Sprite2D/Slap" to="." method="_on_slap_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="pebbles_hitbox" to="." method="_on_pebbles_hitbox_body_entered"]
 [connection signal="body_exited" from="pebbles_hitbox" to="." method="_on_pebbles_hitbox_body_exited"]
-[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]

@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://pause_menu.gd" id="9_yq5fn"]
 [ext_resource type="FontFile" uid="uid://cqia8tbmpi3ec" path="res://ChiKareGo2.ttf" id="10_4klk4"]
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Theme.tres" id="11_2hvd6"]
-[ext_resource type="PackedScene" uid="uid://1gct8vkdfl7a" path="res://volume_slider.tscn" id="12_yp355"]
+[ext_resource type="PackedScene" path="res://volume_slider.tscn" id="12_yp355"]
 [ext_resource type="PackedScene" uid="uid://b7dts4c4mcnyo" path="res://Enemies/Seal/seal.tscn" id="13_kyrvk"]
 [ext_resource type="Shader" path="res://Enemies/hit_flash.gdshader" id="13_ubx7j"]
 [ext_resource type="PackedScene" uid="uid://c1j8acm6ymuju" path="res://Enemies/PolarBear/polar_bear.tscn" id="14_1fwjd"]
