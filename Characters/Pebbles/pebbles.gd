@@ -16,6 +16,9 @@ extends CharacterBody2D
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 
+var equiped_gun_index: int = 0
+
+var inventory = Inventory.new(3)
 
 const LEFT = Vector2(-1, 1)
 const RIGHT = Vector2(1 ,1)
@@ -54,7 +57,7 @@ func _physics_process(_delta):
 			$walking.play()
 			$Timer.start(0.2)
 	
-	
+	equip_gun()
 	move_and_slide()
 	pick_new_animation_state()
 	
@@ -69,7 +72,8 @@ func _physics_process(_delta):
 
 	
 	if Input.is_action_just_pressed("ui_text_backspace"):
-		take_damage(1)
+		if inventory.add_gun("res://Guns/Gun.tscn", randi_range(15,50)):
+			print("added gun")
 	
 	
 
@@ -88,6 +92,7 @@ func shoot():
 	$ShootCooldown.start()
 	if ammo <= 0: return
 	ammo -= 1
+	inventory.__inventory[equiped_gun_index].__ammo -= 1
 	pebbles_shoot.emit(ammo)
 	
 	gunShot.play()
@@ -155,3 +160,22 @@ func _on_pebbles_hitbox_body_exited(body):
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
 
+func equip_gun():
+	if Input.is_key_pressed(KEY_1):
+		equiped_gun_index = 0
+		ammo = inventory.__inventory[0].__ammo
+		print(inventory.__inventory[0].__ammo, " bullets")
+		pebbles_shoot.emit(ammo)
+	
+	if Input.is_key_pressed(KEY_2):
+		equiped_gun_index = 1
+		ammo = inventory.__inventory[1].__ammo
+		print(inventory.__inventory[1].__ammo, " bullets")
+		pebbles_shoot.emit(ammo)
+	
+	if Input.is_key_pressed(KEY_3):
+		equiped_gun_index = 2
+		ammo = inventory.__inventory[2].__ammo
+		print(inventory.__inventory[2].__ammo, " bullets")
+		pebbles_shoot.emit(ammo)
+		
