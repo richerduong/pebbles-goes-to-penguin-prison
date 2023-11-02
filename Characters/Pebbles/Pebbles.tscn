@@ -298,7 +298,12 @@ visible = false
 [node name="FlashHitTimer" type="Timer" parent="."]
 wait_time = 0.2
 
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="area_entered" from="Sprite2D/Slap" to="." method="_on_slap_area_entered"]
 [connection signal="body_entered" from="pebbles_hitbox" to="." method="_on_pebbles_hitbox_body_entered"]
 [connection signal="body_exited" from="pebbles_hitbox" to="." method="_on_pebbles_hitbox_body_exited"]
 [connection signal="timeout" from="FlashHitTimer" to="." method="_on_FlashTimer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

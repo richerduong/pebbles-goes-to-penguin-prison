@@ -53,8 +53,7 @@ func _physics_process(_delta):
 			$walking.pitch_scale = randf_range(0.8, 1.2)
 			$walking.play()
 			$Timer.start(0.2)
-	
-	
+
 	move_and_slide()
 	pick_new_animation_state()
 	
@@ -63,6 +62,9 @@ func _physics_process(_delta):
   
 	if Input.is_action_just_pressed("slap"):
 		slap()
+
+	if Input.is_action_just_pressed("dash"):
+		dash()
 	
 	#print("Current Animation: ", $AnimationPlayer.current_animation)
 	#print("Sprite Frame: ", $Sprite2D.frame)
@@ -70,7 +72,6 @@ func _physics_process(_delta):
 	
 	if Input.is_action_just_pressed("ui_text_backspace"):
 		take_damage(1)
-	
 	
 
 func pick_new_animation_state():
@@ -155,3 +156,10 @@ func _on_pebbles_hitbox_body_exited(body):
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
 
+func dash():
+	move_speed = move_speed * 2
+	$Timer2.start()
+
+func _on_timer_2_timeout():
+	move_speed = 250
+	pass # Replace with function body.

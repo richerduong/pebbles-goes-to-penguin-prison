@@ -385,45 +385,6 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(131072, 196608, 8, 131075, 196608, 8, 131078, 196608, 8, 196606, 131072, 6, 131070, 131072, 5, 65534, 131072, 5, -2, 131072, 5, -65538, 131072, 5, 65537, 65536, 8, 1, 65536, 8, -65535, 65536, 8, -131071, 65536, 8, 65540, 65536, 8, 4, 65536, 8, -65532, 65536, 8, -131068, 65536, 8, 65543, 0, 5, 7, 0, 5, -65529, 0, 5, -131065, 0, 5, 131079, 524288, 8, 131076, 393216, 8, 131073, 393216, 8, 196605, 196608, 6, 262141, 131072, 5, 327677, 131072, 5, 393213, 131072, 5, 458749, 131072, 5, 524285, 131072, 5, 589821, 131072, 5, 655357, 131072, 5, 720893, 131072, 5, 786429, 131072, 5, 196616, 65536, 8, 262152, 65536, 8, 327688, 65536, 8, 393224, 65536, 8, 458760, 131072, 8, 655368, 262144, 8, 720904, 65536, 8, 851966, 65536, 4, 851967, 65536, 4, 786432, 131072, 4, 786435, 0, 4, 786436, 65536, 4, 786437, 65536, 4, 786438, 65536, 4, 786439, 65536, 4, 786440, 196608, 7, 851965, 327680, 6, 131080, 131072, 7, 131081, 65536, 6, 131082, 65536, 6, 131083, 65536, 6, 131084, 65536, 6, 131085, 65536, 6, 131086, 65536, 6, 131087, 65536, 6, 131088, 262144, 6, 196624, 0, 5, 262160, 0, 5, 327696, 0, 5, 393232, 0, 5, 458768, 0, 5, 524304, 0, 5, 589840, 0, 5, 655376, 0, 5, 720912, 0, 5, 786441, 65536, 4, 786442, 65536, 4, 786443, 131072, 4, 786445, 0, 4, 786446, 65536, 4, 786447, 65536, 4, 786448, 393216, 6, 851979, 131072, 6, 851981, 0, 6, 851978, 65536, 6, 851977, 65536, 6, 851976, 65536, 6, 851975, 65536, 6, 851974, 65536, 6, 851973, 65536, 6, 851972, 65536, 6, 851971, 0, 6, 851982, 65536, 6, 851983, 65536, 6, 917520, 0, 5, 983056, 0, 5, 1048592, 0, 5, 1114128, 0, 5, 1179664, 0, 5, 1245199, 65536, 4, 1245198, 65536, 4, 1245197, 65536, 4, 1245196, 65536, 4, 1245195, 65536, 4, 1245194, 65536, 4, 1245193, 65536, 4, 1245192, 65536, 4, 1245191, 65536, 4, 1245190, 65536, 4, 1245189, 65536, 4, 1245185, 65536, 4, 1245188, 65536, 4, 1245187, 65536, 4, 1245186, 65536, 4, 1245184, 65536, 4, 1310719, 65536, 4, 1310718, 65536, 4, 1245181, 131072, 5, 1179645, 131072, 5, 1114109, 131072, 5, 1048573, 131072, 5, 983037, 131072, 5, 917502, 65536, 6, 917503, 65536, 6, 851968, 131072, 6, 1245200, 393216, 6, 1310717, 327680, 6, 917501, 196608, 6, 851984, 262144, 6, -131073, 65536, 6, -196608, 65536, 6, -196606, 65536, 6, -196605, 65536, 6, -196603, 65536, 6, -196602, 65536, 6, -196601, 262144, 6, -131074, 196608, 6, -196607, 131072, 7, -196604, 131072, 7)
 
-[node name="Barrel" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(369, 148)
-
-[node name="Barrel2" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(217, 301)
-
-[node name="Barrel5" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(491, 492)
-
-[node name="Barrel10" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(842, 202)
-
-[node name="Barrel11" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(1111, 197)
-
-[node name="Barrel12" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(988, 357)
-
-[node name="Barrel6" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(358, 813)
-
-[node name="Barrel13" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(134, 930)
-
-[node name="Barrel7" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(521, 903)
-
-[node name="Barrel8" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(740, 919)
-
-[node name="Barrel9" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(903, 486)
-
-[node name="Barrel3" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(56, 317)
-
-[node name="Barrel4" parent="." instance=ExtResource("4_xdcdu")]
-position = Vector2(521, 326)
-
 [node name="Pebbles" parent="." instance=ExtResource("5_aw3i6")]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
@@ -631,6 +592,95 @@ theme_override_constants/outline_size = 2
 text = "Back
 "
 
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Bed" parent="Objects" instance=ExtResource("3_id7cy")]
+position = Vector2(40, -52)
+
+[node name="Toilet" parent="Objects" instance=ExtResource("4_om7kv")]
+position = Vector2(-42, -64)
+scale = Vector2(1.00083, 1)
+
+[node name="Bed2" parent="Objects" instance=ExtResource("3_id7cy")]
+position = Vector2(252, -51)
+
+[node name="Toilet2" parent="Objects" instance=ExtResource("4_om7kv")]
+position = Vector2(170, -63)
+scale = Vector2(1.00083, 1)
+
+[node name="Bed3" parent="Objects" instance=ExtResource("3_id7cy")]
+position = Vector2(466, -52)
+
+[node name="Toilet3" parent="Objects" instance=ExtResource("4_om7kv")]
+position = Vector2(384, -64)
+scale = Vector2(1.00083, 1)
+
+[node name="Barrel" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(369, 148)
+
+[node name="Barrel2" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(217, 301)
+
+[node name="Barrel5" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(491, 492)
+
+[node name="Barrel10" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(842, 202)
+
+[node name="Barrel11" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(1111, 197)
+
+[node name="Barrel12" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(988, 357)
+
+[node name="Barrel6" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(358, 813)
+
+[node name="Barrel13" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(134, 930)
+
+[node name="Barrel7" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(521, 903)
+
+[node name="Barrel8" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(740, 919)
+
+[node name="Barrel9" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(903, 486)
+
+[node name="Barrel3" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(56, 317)
+
+[node name="Barrel4" parent="Objects" instance=ExtResource("4_xdcdu")]
+position = Vector2(521, 326)
+
+[node name="polar_bear_slap2" parent="." instance=ExtResource("14_1fwjd")]
+position = Vector2(819, 585)
+
+[node name="penguin_cop_gun1" parent="." instance=ExtResource("6_ignc1")]
+position = Vector2(1038, 701)
+
+[node name="penguin_cop-gun" parent="." instance=ExtResource("6_ignc1")]
+position = Vector2(-20, 1159)
+
+[node name="polar_bear_slap1" parent="." instance=ExtResource("14_1fwjd")]
+position = Vector2(247, 435)
+
+[node name="seal-gun2" parent="." instance=ExtResource("16_x8joo")]
+position = Vector2(776, 347)
+
+[node name="seal-gun" parent="." instance=ExtResource("16_x8joo")]
+position = Vector2(978, 353)
+
+[node name="seal-slap" parent="." instance=ExtResource("13_kyrvk")]
+position = Vector2(897, 485)
+
+[node name="polar_bear_gun" parent="." instance=ExtResource("17_ivn1y")]
+position = Vector2(825, 1064)
+
+[node name="penguin_cop_slap" parent="." instance=ExtResource("18_8mmr7")]
+position = Vector2(-56, 299)
+
 [node name="polar_bear_slap" parent="." instance=ExtResource("14_1fwjd")]
 position = Vector2(512, 1169)
 
@@ -682,56 +732,6 @@ position = Vector2(647, 1083)
 [node name="PolarBear7" parent="." instance=ExtResource("14_1fwjd")]
 material = SubResource("ShaderMaterial_qr5ug")
 position = Vector2(1056, 661)
-
-[node name="Objects" type="Node2D" parent="."]
-
-[node name="Bed" parent="Objects" instance=ExtResource("3_id7cy")]
-position = Vector2(40, -52)
-
-[node name="Toilet" parent="Objects" instance=ExtResource("4_om7kv")]
-position = Vector2(-42, -64)
-scale = Vector2(1.00083, 1)
-
-[node name="Bed2" parent="Objects" instance=ExtResource("3_id7cy")]
-position = Vector2(252, -51)
-
-[node name="Toilet2" parent="Objects" instance=ExtResource("4_om7kv")]
-position = Vector2(170, -63)
-scale = Vector2(1.00083, 1)
-
-[node name="Bed3" parent="Objects" instance=ExtResource("3_id7cy")]
-position = Vector2(466, -52)
-
-[node name="Toilet3" parent="Objects" instance=ExtResource("4_om7kv")]
-position = Vector2(384, -64)
-scale = Vector2(1.00083, 1)
-
-[node name="polar_bear_slap2" parent="." instance=ExtResource("14_1fwjd")]
-position = Vector2(819, 585)
-
-[node name="penguin_cop_gun1" parent="." instance=ExtResource("6_ignc1")]
-position = Vector2(1038, 701)
-
-[node name="penguin_cop-gun" parent="." instance=ExtResource("6_ignc1")]
-position = Vector2(-20, 1159)
-
-[node name="polar_bear_slap1" parent="." instance=ExtResource("14_1fwjd")]
-position = Vector2(247, 435)
-
-[node name="seal-gun2" parent="." instance=ExtResource("16_x8joo")]
-position = Vector2(776, 347)
-
-[node name="seal-gun" parent="." instance=ExtResource("16_x8joo")]
-position = Vector2(978, 353)
-
-[node name="seal-slap" parent="." instance=ExtResource("13_kyrvk")]
-position = Vector2(897, 485)
-
-[node name="polar_bear_gun" parent="." instance=ExtResource("17_ivn1y")]
-position = Vector2(825, 1064)
-
-[node name="penguin_cop_slap" parent="." instance=ExtResource("18_8mmr7")]
-position = Vector2(-56, 299)
 
 [connection signal="pressed" from="PauseMenu/Pause/MarginContainer/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/MarginContainer/VBoxContainer/Volume" to="PauseMenu" method="_on_volume_pressed"]
