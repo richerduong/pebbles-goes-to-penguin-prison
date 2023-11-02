@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf0afnepahqfn"]
+
+[ext_resource type="Script" path="res://Intro/Storyboard/original_storyboard.gd" id="1_10rir"]
+[ext_resource type="Texture2D" uid="uid://dyvmrwqwmqob1" path="res://Intro/Storyboard/sb1.png" id="2_3lhdw"]
+[ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="3_h672a"]
+
+[node name="Storyboard" type="Node2D"]
+script = ExtResource("1_10rir")
+
+[node name="Image" type="TextureRect" parent="."]
+offset_right = 1921.0
+offset_bottom = 1081.0
+texture = ExtResource("2_3lhdw")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="WhiteBackground" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -50.0
+offset_top = -35.0
+offset_right = 1980.0
+offset_bottom = 1126.0
+
+[node name="Next" type="Button" parent="."]
+offset_left = 1508.0
+offset_top = 998.0
+offset_right = 1703.0
+offset_bottom = 1069.0
+theme = ExtResource("3_h672a")
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 60
+text = "Next"
+
+[node name="Skip" type="Button" parent="."]
+offset_left = 1714.0
+offset_top = 998.0
+offset_right = 1909.0
+offset_bottom = 1069.0
+theme = ExtResource("3_h672a")
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 60
+text = "Skip"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

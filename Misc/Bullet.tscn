@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv75t1glvbda2"]
+
+[ext_resource type="Script" path="res://Guns/Bullets/Bullet.gd" id="1_5dfwo"]
+[ext_resource type="Texture2D" uid="uid://dn57gfh30pjtc" path="res://Guns/Bullets/Sprites/bullet.png" id="2_ap7nv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwh4c"]
+size = Vector2(4, 2)
+
+[node name="Bullet" type="Area2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_5dfwo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ap7nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, -1)
+shape = SubResource("RectangleShape2D_qwh4c")
+
+[node name="Lifetime" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

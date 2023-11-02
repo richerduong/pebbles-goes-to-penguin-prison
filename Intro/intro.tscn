@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://cumfo5tnpir4h"]
+
+[ext_resource type="Script" path="res://Intro/intro.gd" id="1_qeup7"]
+[ext_resource type="Texture2D" uid="uid://v48gfkaravpj" path="res://Intro/intro.png" id="2_jhwde"]
+
+[sub_resource type="Animation" id="Animation_jt0fx"]
+resource_name = "Fade In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_betsa"]
+resource_name = "Fade Out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p6xh4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tlbsj"]
+_data = {
+"Fade In": SubResource("Animation_jt0fx"),
+"Fade Out": SubResource("Animation_betsa"),
+"RESET": SubResource("Animation_p6xh4")
+}
+
+[node name="intro" type="Node2D"]
+script = ExtResource("1_qeup7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(959.5, 542)
+scale = Vector2(1.00573, 1.00556)
+texture = ExtResource("2_jhwde")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -46.0
+offset_top = -36.0
+offset_right = -6.0
+offset_bottom = 4.0
+scale = Vector2(50.7575, 29.1533)
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tlbsj")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true

@@ -4,3 +4,5 @@
 
 [resource]
 script = ExtResource("1_bodgj")
+recoil = 8.0
+firerate = 0.5

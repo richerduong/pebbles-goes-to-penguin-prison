@@ -4,3 +4,5 @@
 
 [resource]
 script = ExtResource("1_sxgip")
+recoil = 15.0
+firerate = 0.8
