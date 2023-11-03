@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ap1kc"]
 size = Vector2(43, 29)
 
-[node name="PickupFish" type="StaticBody2D"]
+[node name="PickupFish" type="Area2D"]
+z_index = -1
 script = ExtResource("1_xrep5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
