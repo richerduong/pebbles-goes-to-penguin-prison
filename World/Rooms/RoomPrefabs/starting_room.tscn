@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://oka46aerxr4w"]
+[gd_scene load_steps=6 format=3 uid="uid://oka46aerxr4w"]
 
 [ext_resource type="PackedScene" uid="uid://ckn4oeyvujo0a" path="res://Tileset/tile_map.tscn" id="2_t6qsh"]
 [ext_resource type="TileSet" uid="uid://bp2iacl7yc504" path="res://Tileset/prison_tileset.tres" id="2_x80hl"]
 [ext_resource type="PackedScene" uid="uid://cgtt51gelur8x" path="res://World/Rooms/prison_door.tscn" id="4_unjr5"]
 [ext_resource type="PackedScene" uid="uid://b71kmqiplxyv0" path="res://Entities/Objects/barrel_fish.tscn" id="4_wo42d"]
-[ext_resource type="PackedScene" uid="uid://bspqkbt84pgk5" path="res://Collectables/Guns/lasergun_collectable.tscn" id="5_5mu3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8gw0"]
 size = Vector2(173, 211)
@@ -12,7 +11,7 @@ size = Vector2(173, 211)
 [node name="Room" type="Node2D"]
 
 [node name="PebblesSpawn" type="Node2D" parent="."]
-position = Vector2(79, 46)
+position = Vector2(48, 16)
 
 [node name="TileMap" parent="." instance=ExtResource("2_t6qsh")]
 tile_set = ExtResource("2_x80hl")
@@ -31,7 +30,4 @@ position = Vector2(79.5, -0.5)
 shape = SubResource("RectangleShape2D_w8gw0")
 
 [node name="Barrel" parent="." instance=ExtResource("4_wo42d")]
-position = Vector2(48, -67)
-
-[node name="LasergunCollectable" parent="." instance=ExtResource("5_5mu3l")]
-position = Vector2(140, 6)
+position = Vector2(112, 16)

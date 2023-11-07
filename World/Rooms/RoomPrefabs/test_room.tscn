@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ckn4oeyvujo0a" path="res://Tileset/tile_map.tscn" id="2_1vl2l"]
 [ext_resource type="TileSet" uid="uid://bp2iacl7yc504" path="res://Tileset/prison_tileset.tres" id="2_lsty8"]
 [ext_resource type="PackedScene" uid="uid://cgtt51gelur8x" path="res://World/Rooms/prison_door.tscn" id="3_clmt3"]
-[ext_resource type="PackedScene" uid="uid://drxk1ac83qn5k" path="res://Collectables/Guns/machinegun_collectable.tscn" id="4_mn7ae"]
+[ext_resource type="PackedScene" uid="uid://bspqkbt84pgk5" path="res://Collectables/Guns/lasergun_collectable.tscn" id="4_bn0yb"]
 [ext_resource type="PackedScene" uid="uid://3npb3tvfm4h7" path="res://Collectables/Guns/shotgun_collectable.tscn" id="5_f177f"]
 [ext_resource type="PackedScene" uid="uid://b71kmqiplxyv0" path="res://Entities/Objects/barrel_fish.tscn" id="6_begxr"]
 [ext_resource type="PackedScene" uid="uid://c1j8acm6ymuju" path="res://Entities/Enemies/PolarBear/polar_bear.tscn" id="8_a8ksv"]
@@ -37,7 +37,7 @@ visible = false
 position = Vector2(95.5, 111.5)
 shape = SubResource("RectangleShape2D_n1hso")
 
-[node name="MachinegunCollectable" parent="." instance=ExtResource("4_mn7ae")]
+[node name="LasergunCollectable" parent="." instance=ExtResource("4_bn0yb")]
 position = Vector2(210, 222)
 
 [node name="ShotgunCollectable" parent="." instance=ExtResource("5_f177f")]
