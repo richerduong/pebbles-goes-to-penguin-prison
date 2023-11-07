@@ -11,7 +11,7 @@ func _ready():
 	lifetime_timer.connect("timeout", destroy, lifetime)
 	lifetime_timer.start()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	linear_velocity = Vector2.RIGHT.rotated(rotation) * speed
 
 func _on_area_2d_body_entered(body):

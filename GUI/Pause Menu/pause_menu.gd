@@ -3,7 +3,7 @@ extends Control
 @onready var pausemenu = $"."
 @onready var volumemenu = $Volume
 
-func _process(delta):
+func _process(_delta):
 	pass
 	
 	if Input.is_action_pressed("ui_cancel"):

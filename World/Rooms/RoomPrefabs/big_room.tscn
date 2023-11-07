@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dqjis68gg0rhb"]
+[gd_scene load_steps=19 format=3 uid="uid://dqjis68gg0rhb"]
 
 [ext_resource type="TileSet" uid="uid://bp2iacl7yc504" path="res://Tileset/prison_tileset.tres" id="2_0glod"]
 [ext_resource type="PackedScene" uid="uid://ckn4oeyvujo0a" path="res://Tileset/tile_map.tscn" id="2_140m6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Collectables/Pickup/pickup.gd" id="8_vi2v5"]
 [ext_resource type="Texture2D" uid="uid://by6upyrvfq4fr" path="res://Collectables/Pickup/fish skeleton.png" id="9_rf16g"]
 [ext_resource type="Texture2D" uid="uid://rmghs4671cj4" path="res://Collectables/Pickup/blue fish.png" id="10_qo2t1"]
+[ext_resource type="PackedScene" uid="uid://c1j8acm6ymuju" path="res://Entities/Enemies/PolarBear/polar_bear.tscn" id="13_fo6fc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8gw0"]
 size = Vector2(684, 661)
@@ -18,7 +19,7 @@ size = Vector2(684, 661)
 radius = 16.0637
 height = 32.1274
 
-[sub_resource type="PackedScene" id="PackedScene_ouhxw"]
+[sub_resource type="PackedScene" id="PackedScene_235ge"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -36,7 +37,7 @@ _bundled = {
 radius = 16.0637
 height = 32.1274
 
-[sub_resource type="PackedScene" id="PackedScene_aqgjw"]
+[sub_resource type="PackedScene" id="PackedScene_x6f1r"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -50,7 +51,7 @@ _bundled = {
 "version": 3
 }
 
-[sub_resource type="PackedScene" id="PackedScene_fq3nc"]
+[sub_resource type="PackedScene" id="PackedScene_8sjjh"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -64,7 +65,7 @@ _bundled = {
 "version": 3
 }
 
-[sub_resource type="PackedScene" id="PackedScene_8m3qv"]
+[sub_resource type="PackedScene" id="PackedScene_y6wmo"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -81,7 +82,7 @@ _bundled = {
 [node name="Room" type="Node2D"]
 
 [node name="PebblesSpawn" type="Node2D" parent="."]
-position = Vector2(47, 399)
+position = Vector2(526, 549)
 
 [node name="TileMap" parent="." instance=ExtResource("2_140m6")]
 tile_set = ExtResource("2_0glod")
@@ -120,16 +121,22 @@ position = Vector2(368, 122)
 
 [node name="Barrel" parent="." instance=ExtResource("7_mwo24")]
 position = Vector2(48, 5)
-pickup_type = SubResource("PackedScene_ouhxw")
+pickup_type = SubResource("PackedScene_235ge")
 
 [node name="Barrel2" parent="." instance=ExtResource("7_mwo24")]
 position = Vector2(528, 47)
-pickup_type = SubResource("PackedScene_aqgjw")
+pickup_type = SubResource("PackedScene_x6f1r")
 
 [node name="Barrel3" parent="." instance=ExtResource("7_mwo24")]
 position = Vector2(145, 397)
-pickup_type = SubResource("PackedScene_fq3nc")
+pickup_type = SubResource("PackedScene_8sjjh")
 
 [node name="Barrel4" parent="." instance=ExtResource("7_mwo24")]
 position = Vector2(432, 527)
-pickup_type = SubResource("PackedScene_8m3qv")
+pickup_type = SubResource("PackedScene_y6wmo")
+
+[node name="polar-bear-slap2" parent="." instance=ExtResource("13_fo6fc")]
+position = Vector2(458, 143)
+
+[node name="polar-bear-slap" parent="." instance=ExtResource("13_fo6fc")]
+position = Vector2(268, 230)

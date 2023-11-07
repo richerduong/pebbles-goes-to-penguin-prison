@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqiuhpohg1nn1"
-path="res://.godot/imported/seal_death_frames_new.png-ad1241b9757f2c4aa82c6c94286b0633.ctex"
+uid="uid://dhlnlqufvc7ur"
+path="res://.godot/imported/seal_walking.png-28df9e2cff6c45f481daeac62055d5c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Enemies/Seal/seal_death_frames_new.png"
-dest_files=["res://.godot/imported/seal_death_frames_new.png-ad1241b9757f2c4aa82c6c94286b0633.ctex"]
+source_file="res://Entities/Enemies/Seal/Sprites/seal_walking.png"
+dest_files=["res://.godot/imported/seal_walking.png-28df9e2cff6c45f481daeac62055d5c3.ctex"]
 
 [params]
 

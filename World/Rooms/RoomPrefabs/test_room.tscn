@@ -17,7 +17,7 @@ size = Vector2(331, 305)
 radius = 16.0637
 height = 32.1274
 
-[sub_resource type="PackedScene" id="PackedScene_aufrj"]
+[sub_resource type="PackedScene" id="PackedScene_7mwkf"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -35,7 +35,7 @@ _bundled = {
 radius = 16.0637
 height = 32.1274
 
-[sub_resource type="PackedScene" id="PackedScene_j5vde"]
+[sub_resource type="PackedScene" id="PackedScene_i3d7p"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -82,8 +82,8 @@ position = Vector2(45, 47)
 
 [node name="Barrel" parent="." instance=ExtResource("6_begxr")]
 position = Vector2(-48, 158)
-pickup_type = SubResource("PackedScene_aufrj")
+pickup_type = SubResource("PackedScene_7mwkf")
 
 [node name="Barrel2" parent="." instance=ExtResource("6_begxr")]
 position = Vector2(240, -3)
-pickup_type = SubResource("PackedScene_j5vde")
+pickup_type = SubResource("PackedScene_i3d7p")

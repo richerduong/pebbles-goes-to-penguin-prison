@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhlnlqufvc7ur"
-path="res://.godot/imported/seal_walking.png-f6e3355572ebe3a4d7af04cc9fc481c6.ctex"
+uid="uid://ciwea3dily156"
+path="res://.godot/imported/polar_bear_2.png-2e61461b62c0f92264c169965c9c0cb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Enemies/Seal/seal_walking.png"
-dest_files=["res://.godot/imported/seal_walking.png-f6e3355572ebe3a4d7af04cc9fc481c6.ctex"]
+source_file="res://Entities/Enemies/PolarBear/Sprites/polar_bear_2.png"
+dest_files=["res://.godot/imported/polar_bear_2.png-2e61461b62c0f92264c169965c9c0cb6.ctex"]
 
 [params]
 

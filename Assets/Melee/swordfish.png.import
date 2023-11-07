@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dis5nx7sgrhl1"
-path="res://.godot/imported/swordfish.png-c3614cfbfc83bea9574c542f1bd84669.ctex"
+path="res://.godot/imported/swordfish.png-23f9efb3bfadd155eccb33c2d1f15214.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Guns/swordfish.png"
-dest_files=["res://.godot/imported/swordfish.png-c3614cfbfc83bea9574c542f1bd84669.ctex"]
+source_file="res://Assets/Melee/swordfish.png"
+dest_files=["res://.godot/imported/swordfish.png-23f9efb3bfadd155eccb33c2d1f15214.ctex"]
 
 [params]
 

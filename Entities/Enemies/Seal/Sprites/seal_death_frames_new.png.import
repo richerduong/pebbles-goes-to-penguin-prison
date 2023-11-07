@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uwf6uq3ji8w0"
-path="res://.godot/imported/slap_seal.png-61d0d6037ece767ae57eb90588f2dcd0.ctex"
+uid="uid://bqiuhpohg1nn1"
+path="res://.godot/imported/seal_death_frames_new.png-515d26297aff99460e4583159d6027f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Enemies/Seal/slap_seal.png"
-dest_files=["res://.godot/imported/slap_seal.png-61d0d6037ece767ae57eb90588f2dcd0.ctex"]
+source_file="res://Entities/Enemies/Seal/Sprites/seal_death_frames_new.png"
+dest_files=["res://.godot/imported/seal_death_frames_new.png-515d26297aff99460e4583159d6027f5.ctex"]
 
 [params]
 

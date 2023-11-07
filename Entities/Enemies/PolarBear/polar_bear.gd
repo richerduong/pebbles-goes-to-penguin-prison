@@ -17,7 +17,16 @@ func _on_animated_sprite_2d_frame_changed():
 	if $AnimatedSprite2D.frame == 1 && $AnimatedSprite2D.animation == "death":
 		$CollisionShape2D.disabled = true
 
+func _on_detection_radius_body_entered(body):
+	print("Entered detection radius:", body.name)
+	if body.name == _get_target_name():
+		target = body
+		pebbles_chase = true
 
+func _on_detection_radius_body_exited(body):
+	print("Exited detection radius:", body.name)
+	if body.name == _get_target_name():
+		pebbles_chase = false
 
 # Hit Flash Shader
 #@onready var sprite = $AnimatedSprite2D

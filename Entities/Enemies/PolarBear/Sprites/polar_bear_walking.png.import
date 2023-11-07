@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds1rqwa2cldf1"
-path="res://.godot/imported/polar_bear_death2.png-711f05a39a269ffb127805ea5ab7c135.ctex"
+uid="uid://cfvm5wq7q5yci"
+path="res://.godot/imported/polar_bear_walking.png-76e70490f4c1d75f9d5440c067447c42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Enemies/PolarBear/polar_bear_death2.png"
-dest_files=["res://.godot/imported/polar_bear_death2.png-711f05a39a269ffb127805ea5ab7c135.ctex"]
+source_file="res://Entities/Enemies/PolarBear/Sprites/polar_bear_walking.png"
+dest_files=["res://.godot/imported/polar_bear_walking.png-76e70490f4c1d75f9d5440c067447c42.ctex"]
 
 [params]
 

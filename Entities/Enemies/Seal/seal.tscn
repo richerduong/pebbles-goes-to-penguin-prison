@@ -1,10 +1,10 @@
 [gd_scene load_steps=27 format=3 uid="uid://b7dts4c4mcnyo"]
 
-[ext_resource type="Texture2D" uid="uid://dhlnlqufvc7ur" path="res://Entities/Enemies/Seal/seal_walking.png" id="1_37iev"]
+[ext_resource type="Texture2D" uid="uid://dhlnlqufvc7ur" path="res://Entities/Enemies/Seal/Sprites/seal_walking.png" id="1_37iev"]
 [ext_resource type="Script" path="res://Entities/Enemies/Seal/seal.gd" id="1_c2je5"]
 [ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="2_d07ir"]
-[ext_resource type="Texture2D" uid="uid://bqiuhpohg1nn1" path="res://Entities/Enemies/Seal/seal_death_frames_new.png" id="2_ewul5"]
-[ext_resource type="Texture2D" uid="uid://uwf6uq3ji8w0" path="res://Entities/Enemies/Seal/slap_seal.png" id="4_ijjct"]
+[ext_resource type="Texture2D" uid="uid://bqiuhpohg1nn1" path="res://Entities/Enemies/Seal/Sprites/seal_death_frames_new.png" id="2_ewul5"]
+[ext_resource type="Texture2D" uid="uid://uwf6uq3ji8w0" path="res://Entities/Enemies/Seal/Sprites/slap_seal.png" id="4_ijjct"]
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="5_0ismb"]
 [ext_resource type="AudioStream" uid="uid://c0fv5u8jhjex8" path="res://Audio/sealSlap.mp3" id="7_j474t"]
 

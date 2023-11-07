@@ -216,6 +216,7 @@ texture = ExtResource("2_63tet")
 [node name="PebblesSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_7v67i")
 hframes = 3
+frame = 2
 
 [node name="Gun" type="Sprite2D" parent="."]
 script = ExtResource("5_qqioc")

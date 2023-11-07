@@ -100,7 +100,7 @@ func dash():
 @export var damage: int = 1
 @onready var health: int = max_health
 #@onready var gameOver = $GameOverScreen
-@onready var sprite2 = $Sprite2D
+@onready var sprite2 = $PebblesSprite
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
@@ -109,9 +109,9 @@ signal health_update
 signal pebbles_death
 signal pebbles_shoot
 
-func take_damage(damage: int) -> void:
+func take_damage(damage) -> void:
 	#damage is only going to be 1 for pebbles 
-	health -= 1
+	health -= 1 #change to variable damage after testing
 	
 	#flash()
 	#enemy_attack_cooldown = false

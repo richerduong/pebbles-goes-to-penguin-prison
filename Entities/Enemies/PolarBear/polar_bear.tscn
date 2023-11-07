@@ -1,10 +1,10 @@
 [gd_scene load_steps=28 format=3 uid="uid://c1j8acm6ymuju"]
 
 [ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="1_gk0nd"]
-[ext_resource type="Texture2D" uid="uid://ds1rqwa2cldf1" path="res://Entities/Enemies/PolarBear/polar_bear_death2.png" id="1_qq04s"]
+[ext_resource type="Texture2D" uid="uid://ds1rqwa2cldf1" path="res://Entities/Enemies/PolarBear/Sprites/polar_bear_death2.png" id="1_qq04s"]
 [ext_resource type="Script" path="res://Entities/Enemies/PolarBear/polar_bear.gd" id="1_w8qpw"]
-[ext_resource type="Texture2D" uid="uid://cfvm5wq7q5yci" path="res://Entities/Enemies/PolarBear/polar_bear_walking.png" id="2_sbjkr"]
-[ext_resource type="Texture2D" uid="uid://ciwea3dily156" path="res://Entities/Enemies/PolarBear/polar_bear_2.png" id="3_fkkvj"]
+[ext_resource type="Texture2D" uid="uid://cfvm5wq7q5yci" path="res://Entities/Enemies/PolarBear/Sprites/polar_bear_walking.png" id="2_sbjkr"]
+[ext_resource type="Texture2D" uid="uid://ciwea3dily156" path="res://Entities/Enemies/PolarBear/Sprites/polar_bear_2.png" id="3_fkkvj"]
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="4_p6t7c"]
 [ext_resource type="AudioStream" uid="uid://dfsp13wh0lwrc" path="res://Audio/polarSlap.mp3" id="7_l2txk"]
 
@@ -136,7 +136,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jewoi"]
-radius = 144.003
+radius = 153.029
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cpfbp"]
 radius = 17.0294
@@ -160,6 +160,8 @@ position = Vector2(5, -2)
 scale = Vector2(1.14286, 1.1)
 sprite_frames = SubResource("SpriteFrames_1btrm")
 animation = &"slap"
+frame = 4
+frame_progress = 1.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -10.0
@@ -206,7 +208,6 @@ stream = ExtResource("7_l2txk")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="detection_radius" to="." method="_on_detection_radius_body_entered"]
-[connection signal="body_exited" from="detection_radius" to="." method="_on_detection_radius_body_exited"]
 [connection signal="body_entered" from="slap_radius" to="." method="_on_slap_radius_body_entered"]
 [connection signal="body_exited" from="slap_radius" to="." method="_on_slap_radius_body_exited"]
 [connection signal="timeout" from="slap_timer" to="." method="_on_slap_timer_timeout"]

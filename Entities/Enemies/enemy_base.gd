@@ -37,7 +37,7 @@ func _physics_process(_delta):
 	update_health()
 
 	if pebbles_chase:
-		player = get_node("../" + _get_target_name())
+		#player = get_node("../Entities/Player/" + _get_target_name())
 		# Old Speed calculation
 		#position += (target.position - position)/speed
 		#var direction = (player.position - self.position).normalized()
@@ -50,8 +50,8 @@ func _physics_process(_delta):
 			get_node("AnimatedSprite2D").flip_h = true
 		else:
 			get_node("AnimatedSprite2D").flip_h = false
-		if $AnimatedSprite2D.animation != "slap":
-			$AnimatedSprite2D.play(_get_walk_animation_name())
+		#if $AnimatedSprite2D.animation != "slap":
+		#	$AnimatedSprite2D.play(_get_walk_animation_name())
 
 		move_and_collide(Vector2.ZERO)
 	else:
@@ -143,3 +143,4 @@ func die():
 	$AnimatedSprite2D.play(_get_death_animation_name())
 	health = 0
 	set_physics_process(false)
+
