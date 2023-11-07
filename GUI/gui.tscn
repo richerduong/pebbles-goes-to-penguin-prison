@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp53m2uyp2646"]
+[gd_scene load_steps=18 format=3 uid="uid://bp53m2uyp2646"]
 
 [ext_resource type="Script" path="res://GUI/gui.gd" id="1_e6sdv"]
 [ext_resource type="PackedScene" uid="uid://c04bavlpx3imm" path="res://GUI/Inventory/slot.tscn" id="1_k0a7i"]
@@ -7,6 +7,128 @@
 [ext_resource type="FontFile" uid="uid://cqia8tbmpi3ec" path="res://Misc/ChiKareGo2.ttf" id="4_ks7nk"]
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="5_qhty0"]
 [ext_resource type="PackedScene" uid="uid://1gct8vkdfl7a" path="res://volume_slider.tscn" id="7_xm40d"]
+[ext_resource type="PackedScene" uid="uid://bsoksr3gujxxx" path="res://GUI/User Interface/heart-container-ui.tscn" id="8_coqux"]
+[ext_resource type="Texture2D" uid="uid://b2nij24rn0jq6" path="res://GUI/User Interface/Sprites/shotgun-shells.png" id="9_3mk52"]
+[ext_resource type="FontFile" uid="uid://b8v2tt42dl1fd" path="res://GUI/User Interface/PublicPixel-z84yD.ttf" id="10_ydoat"]
+[ext_resource type="Script" path="res://GUI/User Interface/ammo-amount-ui.gd" id="11_bbeky"]
+[ext_resource type="Texture2D" uid="uid://rmghs4671cj4" path="res://Assets/GUI/blue fish.png" id="12_k4eui"]
+[ext_resource type="Texture2D" uid="uid://cdqtwyxjo1fxs" path="res://Assets/download-blank-speech-bubble-blank-pixel-speech-bubble-png-full-size-png-image-pngkit.png" id="12_ob0vf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc7xa"]
+bg_color = Color(0.47451, 0.568627, 0.556863, 0.427451)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Animation" id="Animation_hhv1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textbox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textbox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textbox/MarginContainer/Label:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textbox/MarginContainer/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Use keys 'WASD' to move."]
+}
+
+[sub_resource type="Animation" id="Animation_nmhev"]
+resource_name = "tutorial_dialog"
+length = 18.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Textbox:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 17.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Textbox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Textbox/MarginContainer/Label:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3, 4, 4.5, 5, 6, 7.5, 8.5, 9, 10.5, 12.5, 13.5, 14, 14.5, 15, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.299, 0.296, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Textbox/MarginContainer/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 5, 9, 14),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "Use WASD keys to move.", "To shoot, click LMB. Try it on the barrel.", "A fish! Wonder what it does...", "+25hp ... let's get out of here."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uih8p"]
+_data = {
+"RESET": SubResource("Animation_hhv1v"),
+"tutorial_dialog": SubResource("Animation_nmhev")
+}
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_e6sdv")
@@ -230,6 +352,105 @@ text = "Back
 "
 
 [node name="CursorAnimationTimer" type="Timer" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 19.0
+offset_top = 14.0
+offset_right = 200.0
+offset_bottom = 89.0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fc7xa")
+
+[node name="HeartsContainer" parent="Panel" instance=ExtResource("8_coqux")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 6.0
+offset_bottom = 6.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(25, 53)
+scale = Vector2(1.71875, 1.71875)
+texture = ExtResource("9_3mk52")
+
+[node name="Ammo Amount" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 46.0
+offset_right = 93.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("10_ydoat")
+theme_override_font_sizes/font_size = 14
+text = "45"
+script = ExtResource("11_bbeky")
+
+[node name="FishSprite" type="Sprite2D" parent="Panel"]
+position = Vector2(106.5, 53)
+scale = Vector2(2, 2)
+texture = ExtResource("12_k4eui")
+
+[node name="FishAmount" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 130.5
+offset_top = 46.0
+offset_right = 178.5
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("10_ydoat")
+theme_override_font_sizes/font_size = 14
+text = "45"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uih8p")
+}
+
+[node name="Textbox" type="MarginContainer" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 584.0
+offset_top = 912.0
+offset_right = 552.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Textbox"]
+layout_mode = 2
+texture = ExtResource("12_ob0vf")
+region_rect = Rect2(0, 0, 784, 256)
+patch_margin_left = 224
+patch_margin_top = 176
+patch_margin_right = 240
+patch_margin_bottom = 176
+
+[node name="MarginContainer" type="MarginContainer" parent="Textbox"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="Label" type="Label" parent="Textbox/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("5_qhty0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "Use keys 'WASD' to move."
+vertical_alignment = 1
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
 
 [connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Resume" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/Volume" to="PauseMenu" method="_on_volume_pressed"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://oka46aerxr4w"]
+
+[ext_resource type="PackedScene" uid="uid://ckn4oeyvujo0a" path="res://Tileset/tile_map.tscn" id="2_t6qsh"]
+[ext_resource type="TileSet" uid="uid://bp2iacl7yc504" path="res://Tileset/prison_tileset.tres" id="2_x80hl"]
+[ext_resource type="PackedScene" uid="uid://cgtt51gelur8x" path="res://World/Rooms/prison_door.tscn" id="4_unjr5"]
+[ext_resource type="PackedScene" uid="uid://b71kmqiplxyv0" path="res://Entities/Objects/barrel.tscn" id="4_wo42d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8gw0"]
+size = Vector2(173, 211)
+
+[node name="Room" type="Node2D"]
+
+[node name="PebblesSpawn" type="Node2D" parent="."]
+position = Vector2(79, 46)
+
+[node name="TileMap" parent="." instance=ExtResource("2_t6qsh")]
+tile_set = ExtResource("2_x80hl")
+layer_0/tile_data = PackedInt32Array(-196608, 0, 0, -196607, 0, 0, -196605, 0, 0, -196604, 0, 0, -262144, 65536, 2, -262143, 65536, 2, -262142, 65536, 2, -262141, 65536, 2, -262140, 65536, 2, -262139, 131072, 2, -196609, 0, 2, -131073, 0, 3, -65537, 0, 3, -1, 0, 3, 65535, 0, 3, 131071, 0, 3, 196607, 0, 3, 262143, 0, 4, 196608, 65536, 4, 196609, 65536, 4, 196610, 65536, 4, 196611, 65536, 4, 196612, 65536, 4, 196613, 131072, 4, 131077, 131072, 3, 65541, 131072, 3, 5, 131072, 3, -65531, 131072, 3, -131067, 131072, 3, -196603, 131072, 3, -131072, 196608, 5, -131071, 131072, 5, -131070, 131072, 5, -131069, 196608, 6, -131068, 65536, 5, -65532, 327680, 6, 4, 131072, 6, 3, 131072, 6, -65533, 131072, 5, -65534, 0, 5, -65535, 0, 6, -65536, 196608, 5, 0, 196608, 5, 1, 262144, 5, 65537, 327680, 5, 2, 262144, 5, 65539, 131072, 5, 65538, 196608, 5, 65536, 196608, 5, 131072, 196608, 6, 131073, 196608, 6, 131074, 0, 6, 131075, 131072, 6, 131076, 0, 5, 65540, 0, 5)
+
+[node name="PrisonDoor" parent="." instance=ExtResource("4_unjr5")]
+position = Vector2(64, -96)
+next_room = "res://World/Rooms/RoomPrefabs/test_room.tscn"
+
+[node name="CameraArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="CameraBounds" type="CollisionShape2D" parent="CameraArea"]
+position = Vector2(79.5, -0.5)
+shape = SubResource("RectangleShape2D_w8gw0")
+
+[node name="Barrel" parent="." instance=ExtResource("4_wo42d")]
+position = Vector2(50, -67)

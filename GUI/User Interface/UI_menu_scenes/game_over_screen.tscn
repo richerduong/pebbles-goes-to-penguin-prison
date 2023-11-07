@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="2_y8r4e"]
 
 [node name="GameOverScreen" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_j8sje")
 
 [node name="ColorRect" type="ColorRect" parent="."]

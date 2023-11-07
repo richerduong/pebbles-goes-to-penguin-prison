@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5lanaf8vkvxv"]
-
-[ext_resource type="Script" path="res://Entities/Enemies/EntityStates/EntityIdle.gd" id="1_7ekib"]
-
-[node name="Idle" type="Node"]
-script = ExtResource("1_7ekib")

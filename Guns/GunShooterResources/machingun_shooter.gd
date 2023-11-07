@@ -13,3 +13,6 @@ func shoot() -> Array[Bullet]:
 	
 	bullets.append(bullet)
 	return bullets
+
+func type():
+	return "machinegun"

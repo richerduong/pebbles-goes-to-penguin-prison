@@ -1,14 +1,8 @@
 [gd_scene load_steps=28 format=3 uid="uid://cihror7ta6bov"]
 
-[ext_resource type="Script" path="res://Entities/Enemies/Seal/seal-gun.gd" id="1_en865"]
-[ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="2_4n3t5"]
-[ext_resource type="Texture2D" uid="uid://bqiuhpohg1nn1" path="res://Entities/Enemies/Seal/seal_death_frames_new.png" id="2_qe7kq"]
-[ext_resource type="Texture2D" uid="uid://b6sb5ingbsp6k" path="res://old-Guns/shotgun.png" id="2_v8sv6"]
-[ext_resource type="Texture2D" uid="uid://dhlnlqufvc7ur" path="res://Entities/Enemies/Seal/seal_walking.png" id="3_4k4e5"]
-[ext_resource type="Script" path="res://Entities/Enemies/Shotgun.gd" id="3_v7gub"]
 [ext_resource type="Texture2D" uid="uid://uwf6uq3ji8w0" path="res://Entities/Enemies/Seal/slap_seal.png" id="4_ykrai"]
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="5_ktk2k"]
-[ext_resource type="AudioStream" uid="uid://d3wk2f2csw6x4" path="res://Audio/gunshot.mp3" id="9_idpxf"]
+[ext_resource type="AudioStream" uid="uid://d3wk2f2csw6x4" path="res://Audio/shotgunShot.mp3" id="9_idpxf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3265y"]
 resource_local_to_scene = true

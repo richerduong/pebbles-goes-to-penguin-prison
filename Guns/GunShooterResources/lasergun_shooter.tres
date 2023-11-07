@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnt3uyam8tkmx"]
+
+[ext_resource type="Script" path="res://Guns/GunShooterResources/lasergun_shooter.gd" id="1_4tsup"]
+
+[resource]
+script = ExtResource("1_4tsup")
+recoil = 3.0
+firerate = 0.08

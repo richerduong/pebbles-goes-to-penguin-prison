@@ -917,6 +917,7 @@ scale = Vector2(0.699739, 0.629452)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_ervw8")
+volume_db = -10.0
 autoplay = true
 
 [connection signal="pressed" from="Control/skip_button" to="." method="_on_button_pressed"]

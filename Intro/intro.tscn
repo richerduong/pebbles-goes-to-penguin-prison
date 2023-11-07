@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Intro/intro.gd" id="1_qeup7"]
 [ext_resource type="Texture2D" uid="uid://v48gfkaravpj" path="res://Intro/intro.png" id="2_jhwde"]
-[ext_resource type="AudioStream" uid="uid://ckj3oluplofce" path="res://Audio/loadingSound.mp3" id="3_iughv"]
+[ext_resource type="AudioStream" uid="uid://cp314m88ce6nr" path="res://Audio/loadSound.mp3" id="3_50804"]
 
 [sub_resource type="Animation" id="Animation_jt0fx"]
 resource_name = "Fade In"
@@ -80,5 +80,6 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_iughv")
+stream = ExtResource("3_50804")
+volume_db = -10.0
 autoplay = true

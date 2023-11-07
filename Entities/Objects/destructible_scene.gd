@@ -7,3 +7,4 @@ func take_damage(damage: int) -> void:
 	print("current health: ", health)
 	if health <= 0:
 		queue_free()
+		$barrelbreak.play()
