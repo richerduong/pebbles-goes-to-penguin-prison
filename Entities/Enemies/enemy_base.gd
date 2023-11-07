@@ -30,7 +30,7 @@ func _get_walk_animation_name():
 
 # Common logic
 func _ready():
-	target = load("res://Entities/Player/pebbles.tscn").instantiate()
+	target = get_node("res://Entities/Player/pebbles.tscn")
 	add_child(target)
 	$AnimatedSprite2D.connect("animation_finished", Callable(self, "_on_AnimatedSprite2D_animation_finished"))
 #	$AnimatedSprite2D.connect("slap_timer", Callable(self, "_on_slap_timer_timeout"))
@@ -72,7 +72,7 @@ func take_damage(damage: int) -> void:
 	# Make the enemy chase Pebbles when taking damage
 	if target == null or target.name != _get_target_name():
 		pebbles_chase = true
-		target = get_node("res://Entities/Player/PebblesSprite") # You might want to get an existing node instead
+		target = get_node("res://Entities/Player/Pebbles") # You might want to get an existing node instead
 		add_child(target) 
 	
 	if health <= 0:
