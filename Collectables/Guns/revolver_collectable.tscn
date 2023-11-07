@@ -11,6 +11,3 @@ inventory_item = ExtResource("2_tbo0c")
 
 [node name="CollectionCollisionShape" parent="." index="0"]
 shape = SubResource("CircleShape2D_u1mx8")
-
-[node name="Sprite2D" parent="." index="1"]
-offset = Vector2(2.08165e-12, -5)
