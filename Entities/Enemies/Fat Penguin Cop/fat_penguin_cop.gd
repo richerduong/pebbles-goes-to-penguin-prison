@@ -4,12 +4,11 @@ extends CharacterBody2D
 @onready var lightGunShot = $lightGunShot
 
 var player
-var speed = 200
+var speed = 50
 var pebbles_chase = false
 var pebbles = null
 var health = 250
 var can_shoot = true
-var knockback_val = 25
 
 # Hit Flash Shader
 @onready var sprite = $AnimatedSprite2D
@@ -26,8 +25,8 @@ func _physics_process(_delta):
 	update_health()
 	
 	if pebbles_chase:
-		player = load("res://Entities/Player/pebbles.tscn").instantiate()
-		#shoot_pebbles()
+		player = get_node("../Pebbles")
+		shoot_pebbles()
 		position += (pebbles.position - position)/speed
 		$AnimatedSprite2D.play("running")
 		var direction = (player.position - self.position).normalized()
@@ -48,13 +47,10 @@ func _on_detection_radius_body_entered(body):
 		#shoot_pebbles()
 		#CALL the shoot function here when he gets detected shoot_pebbles()
 
-func take_damage(damage: int, bullet: Bullet) -> void:
+func take_damage(damage: int) -> void:
 	#take damage 
 	health -= damage
 	flash()
-	
-	var knockback = bullet.linear_velocity.normalized() * knockback_val
-	position += knockback
 	
 	#if health reaches 0 then delete from scene
 	if health <= 0:
@@ -88,14 +84,14 @@ func _on_regen_timer_timeout():
 	
 	if health <= 0:
 		health = 0
-
-#func shoot_pebbles():
-#	if can_shoot == true:
-#		gun.shoot()
-#		lightGunShot.play()
+	
+func shoot_pebbles():
+	if can_shoot == true:
+		gun.shooter.shoot()
+		lightGunShot.play()
 		
-#		can_shoot = false
-#		$Reload_Timer.start()
+		can_shoot = false
+		$Reload_Timer.start()
 
 func _on_take_damage_cooldown_timeout():
 	can_take_damage = true

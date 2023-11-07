@@ -22,8 +22,5 @@ func shoot() -> bool:
 		return gun.shoot()
 	return false
 
-func get_type():
-	return gun.get_type()
-
 func _set_can_fire() -> void:
 	_can_fire = true

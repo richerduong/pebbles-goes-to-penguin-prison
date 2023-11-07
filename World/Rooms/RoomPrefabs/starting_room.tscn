@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ckn4oeyvujo0a" path="res://Tileset/tile_map.tscn" id="2_t6qsh"]
 [ext_resource type="TileSet" uid="uid://bp2iacl7yc504" path="res://Tileset/prison_tileset.tres" id="2_x80hl"]
 [ext_resource type="PackedScene" uid="uid://cgtt51gelur8x" path="res://World/Rooms/prison_door.tscn" id="4_unjr5"]
-[ext_resource type="PackedScene" uid="uid://b71kmqiplxyv0" path="res://Entities/Objects/barrel_fish.tscn" id="4_wo42d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8gw0"]
 size = Vector2(173, 211)
@@ -41,11 +40,6 @@ visible = false
 position = Vector2(79.5, -0.5)
 shape = SubResource("RectangleShape2D_w8gw0")
 
-<<<<<<< HEAD
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_g4crv")
-=======
-[node name="Barrel" parent="." instance=ExtResource("4_wo42d")]
-position = Vector2(48, -67)
->>>>>>> main
