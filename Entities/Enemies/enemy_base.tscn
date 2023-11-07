@@ -1,18 +1,24 @@
-[gd_scene load_steps=21 format=3 uid="uid://ds15qivbbevhi"]
+[gd_scene load_steps=23 format=3 uid="uid://ds15qivbbevhi"]
 
 [ext_resource type="Texture2D" uid="uid://dl4ml73v7034e" path="res://Assets/Entities/shadow.png" id="1_s4ugw"]
+[ext_resource type="Shader" path="res://Entities/Enemies/Penguin Police/flash.gdshader" id="2_mnhat"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6enk"]
+shader = ExtResource("2_mnhat")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gl74s"]
 height = 26.0
+
+[sub_resource type="Animation" id="Animation_00fcp"]
+resource_name = "death"
 
 [sub_resource type="Animation" id="Animation_qlte0"]
 resource_name = "idle"
 
 [sub_resource type="Animation" id="Animation_vxji6"]
 resource_name = "running"
-
-[sub_resource type="Animation" id="Animation_00fcp"]
-resource_name = "death"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_edy48"]
 _data = {
@@ -99,6 +105,7 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_s4ugw")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_i6enk")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_gl74s")

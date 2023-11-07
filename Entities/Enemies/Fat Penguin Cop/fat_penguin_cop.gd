@@ -87,7 +87,7 @@ func _on_regen_timer_timeout():
 	
 func shoot_pebbles():
 	if can_shoot == true:
-		gun.shoot()
+		gun.shooter.shoot()
 		lightGunShot.play()
 		
 		can_shoot = false

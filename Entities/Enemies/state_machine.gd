@@ -3,6 +3,8 @@ class_name State
 
 signal Transitioned
 
+static var target: CharacterBody2D
+
 func enter():
 	pass
 

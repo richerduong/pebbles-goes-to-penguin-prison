@@ -1,6 +1,7 @@
 extends Node
 
 @export var starting_room: String = "res://World/Rooms/RoomPrefabs/starting_room.tscn"
+@export var room_list: Array[String] = ["res://World/Rooms/RoomPrefabs/big_room_1.tscn", "res://World/Rooms/RoomPrefabs/small_room_1.tscn"]
 
 static var room_manager_node: Node
 static var animation_player: AnimationPlayer
@@ -18,7 +19,9 @@ func setup() -> void:
 	pebbles = load("res://Entities/Player/pebbles.tscn").instantiate()
 	camera = pebbles.get_node("Camera2D")
 
-func switch_room(room_path: String) -> void:
+func switch_room(room_path: String = "") -> void:
+	if room_path == "":
+		room_path = room_list.pick_random()
 	_next_room_path = room_path
 	animation_player.play("fade_in")
 

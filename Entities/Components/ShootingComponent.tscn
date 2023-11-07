@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c68og1ij5la51"]
+
+[ext_resource type="Script" path="res://Entities/Components/ShootingComponent.gd" id="1_seygw"]
+
+[node name="ShootingComponent" type="Node2D"]
+script = ExtResource("1_seygw")

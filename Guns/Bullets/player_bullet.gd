@@ -3,7 +3,7 @@ extends RigidBody2D
 
 @export var speed: float = 800
 @export var lifetime: float = 0.1
-@export var damage: float = 10
+@export var damage: float = 20.01
 
 const impact_smoke: PackedScene = preload("res://Guns/Bullets/Effects/impact_smoke.tscn")
 
@@ -12,8 +12,8 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Bullet": pass
-	var body_health_component = body.get_node("HealthComponent") as HealthComponent
-	if body_health_component:
+	if body.get_node_or_null("HealthComponent"):
+		var body_health_component = body.get_node("HealthComponent") as HealthComponent
 		body_health_component.take_damage(damage, rotation)
 	destroy()
 
