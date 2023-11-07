@@ -7,7 +7,22 @@
 [ext_resource type="Script" path="res://Entities/Player/player_camera.gd" id="4_otm1v"]
 [ext_resource type="Script" path="res://Guns/gun.gd" id="5_qqioc"]
 [ext_resource type="Script" path="res://Entities/Player/player_inventory.gd" id="6_6pra7"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cm2vffgb81e7n" path="res://Entities/Components/player_ranged_attack_component.tscn" id="7_4rer2"]
+=======
+[ext_resource type="Texture2D" uid="uid://m3crtnklvp77" path="res://Assets/Entities/pebbles-eating-fish.png" id="6_ce7l5"]
+[ext_resource type="PackedScene" uid="uid://cm2vffgb81e7n" path="res://Entities/Components/ranged_attack_component.tscn" id="7_4rer2"]
+[ext_resource type="Texture2D" uid="uid://8fhxh3b2rdjs" path="res://Assets/Entities/Player/pebbles-dash.png" id="7_rtiva"]
+[ext_resource type="Script" path="res://Inventory/fishventory.gd" id="9_7it64"]
+[ext_resource type="AudioStream" uid="uid://ctvw6c5mfo1tt" path="res://Audio/reload.mp3" id="9_bmfi5"]
+[ext_resource type="AudioStream" uid="uid://d1e41god0o21b" path="res://Audio/pickup.mp3" id="10_n1smd"]
+[ext_resource type="AudioStream" uid="uid://d3wk2f2csw6x4" path="res://Audio/shotgunShot.mp3" id="11_o5ie2"]
+[ext_resource type="AudioStream" uid="uid://dhj81cb8lgoco" path="res://Audio/revolver.mp3" id="12_ilv8r"]
+[ext_resource type="AudioStream" uid="uid://cdsq4evvx0ymr" path="res://Audio/machinegun.mp3" id="13_pg6ll"]
+[ext_resource type="AudioStream" uid="uid://h17pdkvnep5y" path="res://Audio/walkingtrim.mp3" id="14_aw3cd"]
+[ext_resource type="AudioStream" uid="uid://bawoidr8iu42" path="res://Audio/slideSound.mp3" id="16_3ru8d"]
+[ext_resource type="AudioStream" uid="uid://cwgue21qev62b" path="res://Audio/dropSound.mp3" id="17_jl1ic"]
+>>>>>>> 750f5ff3f140b0fbf850326352d6c434cd0e685c
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ncl5"]
 radius = 8.0
@@ -173,14 +188,14 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 offsets = PackedFloat32Array(0.674074, 1)
 colors = PackedColorArray(0.359069, 0.359069, 0.359069, 1, 0.490196, 0.490196, 0.490196, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_park7"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c3qxj"]
 gradient = SubResource("Gradient_owbeb")
 
 [sub_resource type="Curve" id="Curve_tyntg"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.650602, 0.768421), -1.05901, -1.05901, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_3uwfa"]
+[sub_resource type="CurveTexture" id="CurveTexture_rw4f0"]
 curve = SubResource("Curve_tyntg")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qewu5"]
@@ -196,8 +211,8 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 2.0
 scale_max = 2.0
-scale_curve = SubResource("CurveTexture_3uwfa")
-color_ramp = SubResource("GradientTexture1D_park7")
+scale_curve = SubResource("CurveTexture_rw4f0")
+color_ramp = SubResource("GradientTexture1D_c3qxj")
 
 [node name="Pebbles" type="CharacterBody2D"]
 z_index = 1

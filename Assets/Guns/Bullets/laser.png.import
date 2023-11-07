@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iak4h3qx38ks"
-path="res://.godot/imported/penguin-death.png-fa612cf7bbbf7cd4085edfa0f8c18a6c.ctex"
+uid="uid://b6d3mgstqgtdb"
+path="res://.godot/imported/laser.png-9d499fa3b39c4fcc23a9e8c9f1298928.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Entities/Enemies/penguin-death.png"
-dest_files=["res://.godot/imported/penguin-death.png-fa612cf7bbbf7cd4085edfa0f8c18a6c.ctex"]
+source_file="res://Assets/Guns/Bullets/laser.png"
+dest_files=["res://.godot/imported/laser.png-9d499fa3b39c4fcc23a9e8c9f1298928.ctex"]
 
 [params]
 

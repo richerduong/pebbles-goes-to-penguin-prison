@@ -85,10 +85,17 @@ func _on_regen_timer_timeout():
 	if health <= 0:
 		health = 0
 	
+<<<<<<< HEAD
 func shoot_pebbles():
 	if can_shoot == true:
 		gun.shooter.shoot()
 		lightGunShot.play()
+=======
+#func shoot_pebbles():
+#	if can_shoot == true:
+#		gun.shoot()
+#		lightGunShot.play()
+>>>>>>> 750f5ff3f140b0fbf850326352d6c434cd0e685c
 		
 		can_shoot = false
 		$Reload_Timer.start()

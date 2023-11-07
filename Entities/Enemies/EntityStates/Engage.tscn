@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnjjrwq6xpbe0"]
-
-[ext_resource type="Script" path="res://Entities/Enemies/EntityStates/EntityEngage.gd" id="1_g8q6m"]
-
-[node name="Engage" type="Node"]
-script = ExtResource("1_g8q6m")
