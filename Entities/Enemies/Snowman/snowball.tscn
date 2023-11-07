@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://1o8x8fr61ppx"]
+
+[ext_resource type="Script" path="res://Entities/Enemies/Snowman/snowball.gd" id="1_qmnp2"]
+[ext_resource type="Texture2D" uid="uid://cv46w6yx0hebg" path="res://Assets/Guns/Bullets/snowball.webp" id="2_f5srx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkwnf"]
+radius = 3.0
+
+[node name="snowball" type="Node2D"]
+script = ExtResource("1_qmnp2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 1.19209e-07)
+scale = Vector2(0.0500001, 0.0500001)
+texture = ExtResource("2_f5srx")
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jkwnf")
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

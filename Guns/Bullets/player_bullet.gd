@@ -17,7 +17,7 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name == "Bullet": pass
 	print("Collided with: ", body)
-	if body.has_method("take_damage"):
+	if body.has_method("take_damage") and body.has_method("handle_player_shoot()"):
 		body.take_damage(damage)
 	destroy()
 

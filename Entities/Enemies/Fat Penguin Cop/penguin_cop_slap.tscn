@@ -1,9 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://ccn3vg5d8us3c"]
+[gd_scene load_steps=32 format=3 uid="uid://ccn3vg5d8us3c"]
 
 [ext_resource type="Script" path="res://Entities/Enemies/Fat Penguin Cop/penguin_cop_slap.gd" id="1_ln71g"]
 [ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="3_m1vvd"]
 [ext_resource type="Texture2D" uid="uid://dtkj5cimi878f" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/police_guard_slap_frames.png" id="4_bq1mv"]
-[ext_resource type="Texture2D" uid="uid://d25u4luifj0pd" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/death/police_death1.png" id="5_6s4nv"]
 [ext_resource type="Texture2D" uid="uid://d1fskg8ypleek" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/death/police_death2.png" id="6_lsae6"]
 [ext_resource type="Texture2D" uid="uid://dg0rnllf2bv80" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/death/police_death3.png" id="7_li7od"]
 [ext_resource type="Texture2D" uid="uid://biwmbpmxmqiyd" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/death/police_death4.png" id="8_6ydve"]
@@ -81,7 +80,7 @@ region = Rect2(184, 0, 45, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_6s4nv")
+"texture": null
 }, {
 "duration": 0.6,
 "texture": ExtResource("6_lsae6")

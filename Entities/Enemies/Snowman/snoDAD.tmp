@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://h3juqc02v23n"]
+
+[ext_resource type="Script" path="res://Enemies/Snowman/snowman.gd" id="1_qpvn2"]
+[ext_resource type="Texture2D" uid="uid://dvqn6mxyxf06j" path="res://Assets/Entities/Enemies/snowman.png" id="2_lhqwq"]
+
+[node name="snowman" type="Node2D"]
+script = ExtResource("1_qpvn2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -9.53674e-07)
+scale = Vector2(0.086398, 0.086398)
+texture = ExtResource("2_lhqwq")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Rotater" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, -1.19209e-07)
+scale = Vector2(0.0334087, 0.0334087)
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

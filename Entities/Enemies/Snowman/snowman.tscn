@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://h3juqc02v23n"]
+
+[ext_resource type="Script" path="res://Entities/Enemies/Snowman/snowman.gd" id="1_0rts5"]
+[ext_resource type="Texture2D" uid="uid://dvqn6mxyxf06j" path="res://Assets/Entities/Enemies/snowman.png" id="2_bfj8j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kaft1"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qm2w3"]
+radius = 106.042
+
+[node name="snowman" type="CharacterBody2D"]
+script = ExtResource("1_0rts5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, -9.53674e-07)
+scale = Vector2(0.086398, 0.086398)
+texture = ExtResource("2_bfj8j")
+
+[node name="ShootTimer" type="Timer" parent="."]
+
+[node name="Rotater" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, -1.19209e-07)
+scale = Vector2(0.0334087, 0.0334087)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_kaft1")
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_qm2w3")
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

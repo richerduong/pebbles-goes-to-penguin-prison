@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cbdi8sxhqyw71"]
+[gd_scene load_steps=44 format=3 uid="uid://cbdi8sxhqyw71"]
 
 [ext_resource type="Script" path="res://Entities/Player/pebbles.gd" id="1_2fbo2"]
 [ext_resource type="Texture2D" uid="uid://c6paxncqjbdkb" path="res://Assets/Entities/Player/pebbles-idle.png" id="1_7v67i"]
@@ -352,15 +352,15 @@ pitch_scale = 0.85
 
 [node name="shotgunShot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_o5ie2")
-volume_db = -5.0
+volume_db = -15.0
 
 [node name="revolverShot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ilv8r")
-volume_db = -5.0
+volume_db = -15.0
 
 [node name="machinegunShot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_pg6ll")
-volume_db = -3.0
+volume_db = -10.0
 pitch_scale = 0.64
 
 [node name="walkSound" type="AudioStreamPlayer2D" parent="."]

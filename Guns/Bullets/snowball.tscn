@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://g1qq4bu4mdp6"]
+
+[ext_resource type="Texture2D" uid="uid://cv46w6yx0hebg" path="res://Assets/Guns/Bullets/snowball.webp" id="1_uwwe5"]
+
+[node name="snowball" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.186667, 0.186667)
+texture = ExtResource("1_uwwe5")
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 10.0

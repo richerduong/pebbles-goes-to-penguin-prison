@@ -1,73 +1,73 @@
-[gd_scene load_steps=28 format=3 uid="uid://c1j8acm6ymuju"]
+[gd_scene load_steps=28 format=3 uid="uid://bbm8kjppik41m"]
 
-[ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="1_gk0nd"]
-[ext_resource type="Texture2D" uid="uid://ds1rqwa2cldf1" path="res://Entities/Enemies/PolarBear/polar_bear_death2.png" id="1_qq04s"]
-[ext_resource type="Script" path="res://Entities/Enemies/PolarBear/polar_bear.gd" id="1_w8qpw"]
-[ext_resource type="Texture2D" uid="uid://cfvm5wq7q5yci" path="res://Entities/Enemies/PolarBear/polar_bear_walking.png" id="2_sbjkr"]
-[ext_resource type="Texture2D" uid="uid://ciwea3dily156" path="res://Entities/Enemies/PolarBear/polar_bear_2.png" id="3_fkkvj"]
-[ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="4_p6t7c"]
-[ext_resource type="AudioStream" uid="uid://dfsp13wh0lwrc" path="res://Audio/polarSlap.mp3" id="7_l2txk"]
+[ext_resource type="Script" path="res://Entities/Enemies/Snowman/example_snowman.gd" id="1_fdvoe"]
+[ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="2_yy335"]
+[ext_resource type="Texture2D" uid="uid://ds1rqwa2cldf1" path="res://Entities/Enemies/PolarBear/polar_bear_death2.png" id="3_mhfi6"]
+[ext_resource type="Texture2D" uid="uid://cfvm5wq7q5yci" path="res://Entities/Enemies/PolarBear/polar_bear_walking.png" id="4_8wbkt"]
+[ext_resource type="Texture2D" uid="uid://ciwea3dily156" path="res://Entities/Enemies/PolarBear/polar_bear_2.png" id="5_an25c"]
+[ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="6_45fn8"]
+[ext_resource type="AudioStream" uid="uid://dfsp13wh0lwrc" path="res://Audio/polarSlap.mp3" id="7_ba7wr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ne1sd"]
 resource_local_to_scene = true
-shader = ExtResource("1_gk0nd")
+shader = ExtResource("2_yy335")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3l2x"]
-atlas = ExtResource("1_qq04s")
+atlas = ExtResource("3_mhfi6")
 region = Rect2(0, 0, 56, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ikhoc"]
-atlas = ExtResource("1_qq04s")
+atlas = ExtResource("3_mhfi6")
 region = Rect2(56, 0, 56, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qqeb"]
-atlas = ExtResource("1_qq04s")
+atlas = ExtResource("3_mhfi6")
 region = Rect2(112, 0, 56, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbafe"]
-atlas = ExtResource("1_qq04s")
+atlas = ExtResource("3_mhfi6")
 region = Rect2(168, 0, 56, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3gxv"]
-atlas = ExtResource("2_sbjkr")
+atlas = ExtResource("4_8wbkt")
 region = Rect2(0, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8llq7"]
-atlas = ExtResource("3_fkkvj")
+atlas = ExtResource("5_an25c")
 region = Rect2(0, 0, 65, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rt4tv"]
-atlas = ExtResource("3_fkkvj")
+atlas = ExtResource("5_an25c")
 region = Rect2(65, 0, 65, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_juh7k"]
-atlas = ExtResource("3_fkkvj")
+atlas = ExtResource("5_an25c")
 region = Rect2(130, 0, 65, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64a20"]
-atlas = ExtResource("3_fkkvj")
+atlas = ExtResource("5_an25c")
 region = Rect2(195, 0, 65, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t88y5"]
-atlas = ExtResource("3_fkkvj")
+atlas = ExtResource("5_an25c")
 region = Rect2(260, 0, 65, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_10c47"]
-atlas = ExtResource("2_sbjkr")
+atlas = ExtResource("4_8wbkt")
 region = Rect2(0, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0itmo"]
-atlas = ExtResource("2_sbjkr")
+atlas = ExtResource("4_8wbkt")
 region = Rect2(50, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ycfa"]
-atlas = ExtResource("2_sbjkr")
+atlas = ExtResource("4_8wbkt")
 region = Rect2(100, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbafe"]
-atlas = ExtResource("2_sbjkr")
+atlas = ExtResource("4_8wbkt")
 region = Rect2(150, 0, 50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1btrm"]
@@ -136,7 +136,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jewoi"]
-radius = 144.003
+radius = 138.004
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cpfbp"]
 radius = 17.0294
@@ -145,10 +145,10 @@ radius = 17.0294
 size = Vector2(33, 22)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1550s"]
-radius = 29.0172
+radius = 74.0
 
 [node name="polar-bear-slap" type="CharacterBody2D"]
-script = ExtResource("1_w8qpw")
+script = ExtResource("1_fdvoe")
 
 [node name="RegenTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -159,7 +159,7 @@ material = SubResource("ShaderMaterial_ne1sd")
 position = Vector2(5, -2)
 scale = Vector2(1.14286, 1.1)
 sprite_frames = SubResource("SpriteFrames_1btrm")
-animation = &"walk"
+animation = &"slap"
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -10.0
@@ -167,7 +167,7 @@ offset_top = -23.0
 offset_right = 95.0
 offset_bottom = 4.0
 scale = Vector2(0.2, 0.2)
-theme = ExtResource("4_p6t7c")
+theme = ExtResource("6_45fn8")
 max_value = 250.0
 show_percentage = false
 
@@ -202,7 +202,12 @@ shape = SubResource("CircleShape2D_1550s")
 wait_time = 0.2
 
 [node name="polarSlap" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_l2txk")
+stream = ExtResource("7_ba7wr")
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Rotater" type="Node2D" parent="."]
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="detection_radius" to="." method="_on_detection_radius_body_entered"]
@@ -211,3 +216,4 @@ stream = ExtResource("7_l2txk")
 [connection signal="body_exited" from="slap_radius" to="." method="_on_slap_radius_body_exited"]
 [connection signal="timeout" from="slap_timer" to="." method="_on_slap_timer_timeout"]
 [connection signal="timeout" from="FlashHitTimer" to="." method="_on_FlashTimer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
