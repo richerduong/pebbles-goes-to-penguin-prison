@@ -13,6 +13,7 @@ var current_frame = 0
 
 func _ready():
 	begin_load()
+	$AnimationPlayer.play("tutorial_dialog")
 	$CursorAnimationTimer.connect("timeout", Callable(self, "update_frame"))
 	
 	Input.set_custom_mouse_cursor(
