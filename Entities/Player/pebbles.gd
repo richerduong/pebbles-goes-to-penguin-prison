@@ -147,8 +147,8 @@ func reset_slide():
 	
 
 # Added from old-main
-@export var max_health: int = 100 # TODO: Change health back to 10
-@export var sprite_2d: Sprite2D
+@export var max_health: int = 10 # TODO: Change health back to 10
+#@export var sprite_2d: Sprite2D
 @export var damage: int = 1
 @onready var health: int = max_health
 #@onready var gameOver = $GameOverScreen
@@ -170,9 +170,9 @@ func take_damage(damage: int) -> void:
 	# $attack_cooldown.start()
 	if health <= 0:
 		health = 0
-		sprite2.material.set_shader_parameter("flash_modifier", 0)
+		#sprite2.material.set_shader_parameter("flash_modifier", 0)
 		get_tree().paused = true
-		sprite_2d.visible = false
+		character_sprite.visible = false
 		#gameOver.visible = true
 		print("dead")
 		pebbles_death.emit()
