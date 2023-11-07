@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c1j8acm6ymuju"]
+[gd_scene load_steps=29 format=3 uid="uid://c1j8acm6ymuju"]
 
 [ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="1_gk0nd"]
 [ext_resource type="Texture2D" uid="uid://ds1rqwa2cldf1" path="res://Entities/Enemies/PolarBear/polar_bear_death2.png" id="1_qq04s"]
@@ -147,6 +147,9 @@ size = Vector2(33, 22)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1550s"]
 radius = 29.0172
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ks5lr"]
+radius = 144.003
+
 [node name="polar-bear-slap" type="CharacterBody2D"]
 script = ExtResource("1_w8qpw")
 
@@ -160,6 +163,8 @@ position = Vector2(5, -2)
 scale = Vector2(1.14286, 1.1)
 sprite_frames = SubResource("SpriteFrames_1btrm")
 animation = &"slap"
+
+[node name="PBGun" type="Sprite2D" parent="."]
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -10.0
@@ -203,6 +208,12 @@ wait_time = 0.2
 
 [node name="polarSlap" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_l2txk")
+
+[node name="Shooting_Range" type="Area2D" parent="."]
+
+[node name="Shooting_Shape" type="CollisionShape2D" parent="Shooting_Range"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_ks5lr")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="detection_radius" to="." method="_on_detection_radius_body_entered"]

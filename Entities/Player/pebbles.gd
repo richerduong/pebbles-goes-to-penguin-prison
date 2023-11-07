@@ -152,7 +152,7 @@ func reset_slide():
 @export var damage: int = 1
 @onready var health: int = max_health
 #@onready var gameOver = $GameOverScreen
-@onready var sprite2 = $Sprite2D
+@onready var sprite2 = $PebblesSprite
 
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true

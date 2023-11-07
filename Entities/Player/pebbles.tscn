@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cbdi8sxhqyw71"]
+[gd_scene load_steps=44 format=3 uid="uid://cbdi8sxhqyw71"]
 
 [ext_resource type="Script" path="res://Entities/Player/pebbles.gd" id="1_2fbo2"]
 [ext_resource type="Texture2D" uid="uid://c6paxncqjbdkb" path="res://Assets/Entities/Player/pebbles-idle.png" id="1_7v67i"]
