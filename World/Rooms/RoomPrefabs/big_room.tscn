@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=13 format=3 uid="uid://dqjis68gg0rhb"]
+
 
 [ext_resource type="TileSet" uid="uid://bp2iacl7yc504" path="res://Tileset/prison_tileset.tres" id="2_0glod"]
 [ext_resource type="PackedScene" uid="uid://ckn4oeyvujo0a" path="res://Tileset/tile_map.tscn" id="2_140m6"]
@@ -6,11 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://b5ibn8wniwg7b" path="res://Collectables/Guns/revolver_collectable.tscn" id="4_rry6i"]
 [ext_resource type="PackedScene" uid="uid://3npb3tvfm4h7" path="res://Collectables/Guns/shotgun_collectable.tscn" id="5_14oas"]
 [ext_resource type="PackedScene" uid="uid://drxk1ac83qn5k" path="res://Collectables/Guns/machinegun_collectable.tscn" id="6_xvln1"]
+
+[ext_resource type="PackedScene" uid="uid://cfyn5xxip2okh" path="res://Entities/Enemies/Fat Penguin Cop/fat_penguin_cop.tscn" id="7_ngdst"]
+
 [ext_resource type="PackedScene" uid="uid://b71kmqiplxyv0" path="res://Entities/Objects/barrel_fish.tscn" id="7_mwo24"]
 [ext_resource type="PackedScene" uid="uid://c1j8acm6ymuju" path="res://Entities/Enemies/PolarBear/polar_bear.tscn" id="9_xmru7"]
 [ext_resource type="PackedScene" uid="uid://ccn3vg5d8us3c" path="res://Entities/Enemies/Fat Penguin Cop/penguin_cop_slap.tscn" id="10_iat6q"]
 [ext_resource type="PackedScene" uid="uid://b7dts4c4mcnyo" path="res://Entities/Enemies/Seal/seal.tscn" id="11_tiu15"]
 [ext_resource type="PackedScene" uid="uid://dnubvl46cxjvk" path="res://Entities/Objects/barrel_bone.tscn" id="12_mj60s"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8gw0"]
 size = Vector2(684, 661)
@@ -55,6 +61,9 @@ position = Vector2(538, 394)
 [node name="ShotgunCollectable2" parent="." instance=ExtResource("5_14oas")]
 position = Vector2(368, 122)
 
+[node name="penguin_cop_gun" parent="." instance=ExtResource("7_ngdst")]
+position = Vector2(336, 214)
+=======
 [node name="Barrel" parent="." instance=ExtResource("7_mwo24")]
 position = Vector2(233, 546)
 

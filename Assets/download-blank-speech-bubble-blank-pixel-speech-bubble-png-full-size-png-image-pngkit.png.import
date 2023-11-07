@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by6upyrvfq4fr"
-path="res://.godot/imported/fish skeleton.png-0d938228aa6c30af47a8f0cb2939d424.ctex"
+uid="uid://cdqtwyxjo1fxs"
+path="res://.godot/imported/download-blank-speech-bubble-blank-pixel-speech-bubble-png-full-size-png-image-pngkit.png-1009e06eb87c0fe5abc516799295f703.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Collectables/Pickup/fish skeleton.png"
-dest_files=["res://.godot/imported/fish skeleton.png-0d938228aa6c30af47a8f0cb2939d424.ctex"]
+source_file="res://Assets/download-blank-speech-bubble-blank-pixel-speech-bubble-png-full-size-png-image-pngkit.png"
+dest_files=["res://.godot/imported/download-blank-speech-bubble-blank-pixel-speech-bubble-png-full-size-png-image-pngkit.png-1009e06eb87c0fe5abc516799295f703.ctex"]
 
 [params]
 

@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+# Cursor
 const CURSOR = preload("res://Assets/GUI/Cursor/cursor1.png")
 const ANIMATION_FRAMES = [
 	preload("res://Assets/GUI/Cursor/cursor2.png"),
@@ -7,12 +8,12 @@ const ANIMATION_FRAMES = [
 	preload("res://Assets/GUI/Cursor/cursor4.png"),
 	preload("res://Assets/GUI/Cursor/cursor5.png")
 ]
-
 @export var frames_per_second = 16.0
 var current_frame = 0
 
 func _ready():
 	begin_load()
+	$AnimationPlayer.play("tutorial_dialog")
 	$CursorAnimationTimer.connect("timeout", Callable(self, "update_frame"))
 	
 	Input.set_custom_mouse_cursor(

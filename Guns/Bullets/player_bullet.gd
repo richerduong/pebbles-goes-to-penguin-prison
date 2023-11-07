@@ -18,8 +18,9 @@ func _on_area_2d_body_entered(body):
 	if body.name == "Bullet": pass
 	print("Collided with: ", body)
 	if body.has_method("take_damage"):
-		body.take_damage(damage)
+		body.take_damage(damage,self)
 	destroy()
+	
 
 func destroy():
 	var smoke = impact_smoke.instantiate()

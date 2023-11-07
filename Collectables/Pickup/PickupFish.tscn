@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Collectables/Pickup/pickup.gd" id="1_8yrs1"]
 [ext_resource type="Resource" uid="uid://bdq5nerxeborf" path="res://Collectables/fish_resource.tres" id="2_1vnen"]
-[ext_resource type="Texture2D" uid="uid://rmghs4671cj4" path="res://Collectables/Pickup/blue fish.png" id="2_op3l6"]
 [ext_resource type="Texture2D" uid="uid://dl4ml73v7034e" path="res://Assets/Entities/shadow.png" id="3_fbf26"]
+[ext_resource type="Texture2D" uid="uid://rmghs4671cj4" path="res://Assets/GUI/blue fish.png" id="3_m0dwj"]
 [ext_resource type="Texture2D" uid="uid://cakwqxt6ffxh3" path="res://Assets/GUI/Keys/interact_key.png" id="4_pswfr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_484xt"]
@@ -94,7 +94,7 @@ script = ExtResource("1_8yrs1")
 resource_type = ExtResource("2_1vnen")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_op3l6")
+texture = ExtResource("3_m0dwj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.96046e-08)

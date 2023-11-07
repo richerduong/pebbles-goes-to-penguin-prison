@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci32sgtk14rae"]
+
+[ext_resource type="Script" path="res://World/world.gd" id="1_mvywn"]
+[ext_resource type="PackedScene" uid="uid://j768vou2sjyy" path="res://World/Rooms/room_manager.tscn" id="1_xjk4w"]
+[ext_resource type="PackedScene" uid="uid://bp53m2uyp2646" path="res://GUI/gui.tscn" id="2_oig8e"]
+[ext_resource type="AudioStream" uid="uid://d05a5afbccwy0" path="res://Audio/intensemusic.mp3" id="4_2s5eg"]
+
+[node name="World" type="Node"]
+script = ExtResource("1_mvywn")
+
+[node name="RoomManager" parent="." instance=ExtResource("1_xjk4w")]
+
+[node name="GUI" parent="." instance=ExtResource("2_oig8e")]
+
+[node name="intenseMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2s5eg")
+volume_db = -25.0

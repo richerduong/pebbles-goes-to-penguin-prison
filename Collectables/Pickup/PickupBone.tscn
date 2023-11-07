@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ccpkn8u7u73jq"]
 
 [ext_resource type="Script" path="res://Collectables/Pickup/pickup_bones.gd" id="1_yp5bf"]
-[ext_resource type="Texture2D" uid="uid://by6upyrvfq4fr" path="res://Collectables/Pickup/fish skeleton.png" id="2_jbrwg"]
+[ext_resource type="Texture2D" uid="uid://by6upyrvfq4fr" path="res://Assets/GUI/fish skeleton.png" id="2_jbrwg"]
 [ext_resource type="Texture2D" uid="uid://dl4ml73v7034e" path="res://Assets/Entities/shadow.png" id="3_0aqhc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbmhq"]

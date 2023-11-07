@@ -17,6 +17,12 @@ extends CharacterBody2D
 @onready var walkSound = $walkSound
 @onready var slideSound = $slideSound
 
+# Health
+@onready var fishventory = $Fishventory
+@export var max_health: int = 10
+@onready var health: int = max_health
+var is_eating = false
+
 @export var speed: float = 200
 var current_animation: String = "idle"
 var is_sliding = false 
@@ -101,10 +107,21 @@ func handle_player_interactions() -> void:
 			slide()
 			slideSound.pitch_scale = randf_range(0.8, 1.2)
 			slideSound.play()
+	
+	# press shift to heal (eat)
+	if Input.is_action_just_pressed("eat"):
+		if fishventory.get_fish_value() > 0:
+			is_eating = true
+			heal(25)
+			fishventory.eat_resource()
+			is_eating = false
+			print("Fish left in inventory: ", fishventory.get_fish_value())
+		else:
+			print("No fish in fishventory! Collect some fish!")
 
 func update_animation() -> void:
-	# Make sure we only update the animation if we are not sliding
-	if is_sliding:
+	# Make sure we only update the animation if we are not sliding or eating
+	if is_sliding or is_eating:
 		return
 
 	var anim_state = animation_tree.get("parameters/playback") as AnimationNodeStateMachinePlayback
@@ -119,7 +136,6 @@ func update_animation() -> void:
 	
 	animation_tree["parameters/conditions/is_running"] = velocity != Vector2.ZERO
 	animation_tree["parameters/conditions/is_not_running"] = velocity == Vector2.ZERO
-
 
 func _on_pickup_area_area_entered(area):
 	if area.has_method("collect"): 
@@ -144,13 +160,19 @@ func reset_slide():
 	var anim_state = animation_tree.get("parameters/playback") as AnimationNodeStateMachinePlayback
 	anim_state.travel(current_animation)
 
-	
+func heal(amount: int):
+	animation_tree.set("parameters/conditions/is_eating", true)
+	var anim_state = animation_tree.get("parameters/playback") as AnimationNodeStateMachinePlayback
+	anim_state.travel("eat")
+	health += amount
+
+	if health > max_health:
+		health = max_health
+	#print("Health is: ", health)
 
 # Added from old-main
-@export var max_health: int = 10 # TODO: Change health back to 10
 #@export var sprite_2d: Sprite2D
 @export var damage: int = 1
-@onready var health: int = max_health
 #@onready var gameOver = $GameOverScreen
 @onready var sprite2 = $Sprite2D
 

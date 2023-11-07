@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rmghs4671cj4"
-path="res://.godot/imported/blue fish.png-f97f7d367fa440bf8a3e3ed67fd4c004.ctex"
+uid="uid://by6upyrvfq4fr"
+path="res://.godot/imported/fish skeleton.png-ccaf3ad23f2c63b10b6ebf8e29ac1e61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Collectables/Pickup/blue fish.png"
-dest_files=["res://.godot/imported/blue fish.png-f97f7d367fa440bf8a3e3ed67fd4c004.ctex"]
+source_file="res://Assets/GUI/fish skeleton.png"
+dest_files=["res://.godot/imported/fish skeleton.png-ccaf3ad23f2c63b10b6ebf8e29ac1e61.ctex"]
 
 [params]
 
