@@ -291,6 +291,7 @@ texture = ExtResource("1_7v67i")
 hframes = 3
 
 [node name="Gun" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("5_qqioc")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
@@ -330,7 +331,6 @@ script = ExtResource("6_6pra7")
 gun = NodePath("../Gun")
 
 [node name="MovementParticles" type="GPUParticles2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(0, 15)
 amount = 9

@@ -67,20 +67,20 @@ position = Vector2(47, 0)
 [node name="Barrel4" parent="." instance=ExtResource("7_mwo24")]
 position = Vector2(657, 96)
 
-[node name="polar-bear-slap" parent="." instance=ExtResource("9_xmru7")]
-position = Vector2(110, 81)
-
 [node name="polar-bear-slap2" parent="." instance=ExtResource("9_xmru7")]
 position = Vector2(40, 382)
 
 [node name="penguin_cop_slap" parent="." instance=ExtResource("10_iat6q")]
-position = Vector2(380, 194)
+position = Vector2(480, 379)
 
 [node name="seal-slap" parent="." instance=ExtResource("11_tiu15")]
-position = Vector2(323, 484)
+position = Vector2(228, 578)
 
 [node name="seal-slap2" parent="." instance=ExtResource("11_tiu15")]
-position = Vector2(604, 149)
+position = Vector2(469, 176)
 
-[node name="penguin_cop_slap2" parent="." instance=ExtResource("10_iat6q")]
-position = Vector2(334, 349)
+[node name="seal-slap3" parent="." instance=ExtResource("11_tiu15")]
+position = Vector2(74, 113)
+
+[node name="polar-bear-slap3" parent="." instance=ExtResource("9_xmru7")]
+position = Vector2(250, 243)

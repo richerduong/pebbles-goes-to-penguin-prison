@@ -30,6 +30,7 @@ func _physics_process(_delta):
 		var direction = (player.position - self.position).normalized()
 		if direction.x < 0:
 			get_node("AnimatedSprite2D").flip_h = true
+			$PBGun.flip_h = true
 		else:
 			get_node("AnimatedSprite2D").flip_h = false
 		

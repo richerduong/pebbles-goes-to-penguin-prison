@@ -67,6 +67,7 @@ func handle_player_movement() -> void:
 		character_sprite.flip_h = false # right
 	else:
 		character_sprite.flip_h = true # left
+		
 
 func handle_player_interactions() -> void:
 	# pickup gun

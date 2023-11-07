@@ -166,6 +166,7 @@ sprite_frames = SubResource("SpriteFrames_1btrm")
 animation = &"slap"
 
 [node name="PBGun" type="Sprite2D" parent="."]
+position = Vector2(15, 2)
 script = ExtResource("6_ubr5q")
 
 [node name="HealthBar" type="ProgressBar" parent="."]

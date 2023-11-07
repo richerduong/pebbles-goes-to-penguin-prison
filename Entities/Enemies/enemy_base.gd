@@ -110,8 +110,7 @@ func _on_slap_radius_body_entered(body):
 			inSlapRadius = true
 			target = body
 			attack()
-			if not can_shoot:
-				$slap_timer.start()
+			$slap_timer.start()
 
 			
 func _on_slap_radius_body_exited(body):

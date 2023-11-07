@@ -1,30 +1,43 @@
 extends "res://Entities/Enemies/enemy_base.gd"
 @onready var polarSlap = $polarSlap
-var machine_gun_sprite: Sprite2D
+@onready var gun_placeholder = $PBGun
 var gun_instance: PBGun
-var shotgun_resource = preload("res://Guns/GunTypes/revolver.tres")
+
+
+var weapon_resources = [
+	preload("res://Guns/GunTypes/revolver.tres"),
+	preload("res://Guns/GunTypes/shotgun.tres"),
+	preload("res://Guns/GunTypes/machinegun.tres"),
+	null
+	]
 var has_gun = false
 
 
 
 func _ready():
 	randomize()  # Randomize the random number generator
-	if randi() % 2 == 0:
+	choose_weapon()
+
+func choose_weapon():
+	var weapon_choice_index = randi() % weapon_resources.size()
+	if weapon_choice_index >= 0:  # If weapon_choice_index is -1, no weapon is chosen
 		has_gun = true
 		can_shoot = true
-		instantiate_shotgun_gun()
+		instantiate_gun(weapon_resources[weapon_choice_index])
 	else:
 		has_gun = false
+		attack()
 
 func _on_reload_timer_timeout():
 	can_shoot = true
 
-func instantiate_shotgun_gun():
+func instantiate_gun(weapon_resource):
 	if has_gun:
 		gun_instance = PBGun.new()
-		gun_instance.inventory_item = shotgun_resource
+		gun_instance.inventory_item = weapon_resource
 		add_child(gun_instance)
-		gun_instance.position = Vector2(20, 0) 
+		gun_instance.global_position = gun_placeholder.global_position
+		gun_placeholder.visible = false
 
 func shoot_at_target():
 	if has_gun:
@@ -40,16 +53,17 @@ func _process(delta):
 	if target and is_instance_valid(target) and pebbles_chase:
 		if can_shoot:
 			shoot_at_target()
+			
+
 		
 func _get_target_name():
 	return "Pebbles"
 	
 func attack():
-	if not has_gun:
-		polarSlap.play()
-		var damage = 10
-		$AnimatedSprite2D.play("slap")
-		target.take_damage(damage)
+	polarSlap.play()
+	var damage = 10
+	$AnimatedSprite2D.play("slap")
+	target.take_damage(damage)
 	
 func _on_animated_sprite_2d_frame_changed():
 	var damage = 10
