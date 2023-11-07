@@ -32,17 +32,25 @@ func get_type():
 func shoot() -> bool:
 	if inventory_item and inventory_item.shooter: 
 		var room_node = get_node("/root/World/RoomManager/Room")
-		var bullets = inventory_item.shooter.shoot() as Array[Bullet]
-		if bullets.size():
-			for bullet in bullets:
-				bullet.rotation += rotation
-				bullet.global_position = global_position + Vector2(0, inventory_item.muzzle.y)
-				bullet.global_position = global_position + (Vector2.RIGHT * inventory_item.muzzle.x).rotated(rotation)
-				
-				var bullet_trail = bullet_trail_scene.instantiate() as BulletTrail
-				bullet_trail.bullet_scene = bullet
-				
-				room_node.add_child(bullet)
-				room_node.add_child(bullet_trail)
+		
+		if inventory_item.shooter.get_weapon_type() == "lasergun":
+			# Handle laser firing logic
+			# For example, activate the laser beam, update its position, etc.
+			# This could also involve turning on a RayCast2D or drawing a Line2D
+		else:
+			# Handle bullet firing logic (as it currently is)
+			var bullets = inventory_item.shooter.shoot() as Array[Bullet]
+			if bullets.size():
+				for bullet in bullets:
+					bullet.rotation += rotation
+					bullet.global_position = global_position + Vector2(0, inventory_item.muzzle.y)
+					bullet.global_position = global_position + (Vector2.RIGHT * inventory_item.muzzle.x).rotated(rotation)
+					
+					var bullet_trail = bullet_trail_scene.instantiate() as BulletTrail
+					bullet_trail.bullet_scene = bullet
+					
+					room_node.add_child(bullet)
+					room_node.add_child(bullet_trail)
 			return true
 	return false
+
