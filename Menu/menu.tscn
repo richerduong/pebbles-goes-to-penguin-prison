@@ -347,11 +347,13 @@ text = "Back
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_p6ei1")
-volume_db = -6.0
+volume_db = -15.0
 autoplay = true
+bus = &"Background"
 
 [node name="selectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_1rcud")
+bus = &"Sound Effects"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

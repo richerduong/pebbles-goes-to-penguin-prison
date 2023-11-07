@@ -1,0 +1,155 @@
+[gd_scene load_steps=13 format=3 uid="uid://ccpkn8u7u73jq"]
+
+[ext_resource type="Script" path="res://Collectables/Pickup/pickup_bones.gd" id="1_4f3mk"]
+[ext_resource type="Texture2D" uid="uid://by6upyrvfq4fr" path="res://Collectables/Pickup/fish skeleton.png" id="2_4t7li"]
+[ext_resource type="Texture2D" uid="uid://dl4ml73v7034e" path="res://Assets/Entities/shadow.png" id="3_v1s1d"]
+[ext_resource type="Texture2D" uid="uid://cakwqxt6ffxh3" path="res://Assets/GUI/Keys/interact_key.png" id="4_wrtc4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbmhq"]
+radius = 16.0637
+height = 32.1274
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihltp"]
+resource_local_to_scene = true
+
+[sub_resource type="Animation" id="Animation_na4k7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemSprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollectKey:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+
+[sub_resource type="Animation" id="Animation_arbec"]
+resource_name = "float"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemSprite:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -2), Vector2(2.08165e-12, 2), Vector2(2.08165e-12, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollectKey:offset")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -2), Vector2(0, 2), Vector2(0, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.7, 0.7), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d08tw"]
+_data = {
+"RESET": SubResource("Animation_na4k7"),
+"float": SubResource("Animation_arbec")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as2ib"]
+animation = &"float"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lwuwe"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hugh4"]
+states/Start/position = Vector2(200, 100.25)
+states/float/node = SubResource("AnimationNodeAnimation_as2ib")
+states/float/position = Vector2(324.5, 62.5)
+transitions = ["Start", "float", SubResource("AnimationNodeStateMachineTransition_lwuwe")]
+
+[node name="PickupFishBone" type="Area2D"]
+z_index = 1
+script = ExtResource("1_4f3mk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4t7li")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.96046e-08)
+scale = Vector2(0.460512, 0.324475)
+shape = SubResource("CapsuleShape2D_vbmhq")
+
+[node name="CollectionCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ihltp")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(0, 10)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_v1s1d")
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+offset = Vector2(2.08165e-12, -5)
+
+[node name="CollectKey" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(0, -34)
+texture = ExtResource("4_wrtc4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d08tw")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_hugh4")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

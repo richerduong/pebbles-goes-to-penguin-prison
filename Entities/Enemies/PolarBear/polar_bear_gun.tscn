@@ -1,13 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://bpmfq35fvjb7b"]
 
-[ext_resource type="Script" path="res://Entities/Enemies/PolarBear/polar_bear_gun.gd" id="1_xaw3o"]
 [ext_resource type="Texture2D" uid="uid://ds1rqwa2cldf1" path="res://Entities/Enemies/PolarBear/polar_bear_death2.png" id="2_yixlk"]
 [ext_resource type="Texture2D" uid="uid://cfvm5wq7q5yci" path="res://Entities/Enemies/PolarBear/polar_bear_walking.png" id="3_srv5p"]
 [ext_resource type="Texture2D" uid="uid://ciwea3dily156" path="res://Entities/Enemies/PolarBear/polar_bear_2.png" id="4_r8p6v"]
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="5_5a6pg"]
-[ext_resource type="Texture2D" uid="uid://dxdunjmfu5a76" path="res://Assets/Guns/shotgun.png" id="6_77xwi"]
-[ext_resource type="Script" path="res://Entities/Enemies/Shotgun.gd" id="7_strj3"]
-[ext_resource type="AudioStream" uid="uid://d3wk2f2csw6x4" path="res://Audio/gunshot.mp3" id="8_6rc25"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3l2x"]
 atlas = ExtResource("2_yixlk")

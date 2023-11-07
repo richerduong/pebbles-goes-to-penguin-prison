@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnubvl46cxjvk"]
+
+[ext_resource type="Script" path="res://Entities/Objects/barrel_bone.gd" id="1_2lrlx"]
+[ext_resource type="PackedScene" uid="uid://ccpkn8u7u73jq" path="res://Collectables/Pickup/PickupBone.tscn" id="2_j12ta"]
+[ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="3_ayxpw"]
+[ext_resource type="Texture2D" uid="uid://dvn0adliiqfho" path="res://Assets/s_barrel_0.png" id="4_lfbdl"]
+[ext_resource type="AudioStream" uid="uid://cerqyctck6638" path="res://Audio/barrelbreak.mp3" id="5_t8a4s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbuxx"]
+resource_local_to_scene = true
+shader = ExtResource("3_ayxpw")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfpki"]
+radius = 9.98338
+
+[node name="Barrel" type="StaticBody2D"]
+script = ExtResource("1_2lrlx")
+pickup_type = ExtResource("2_j12ta")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wbuxx")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_lfbdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.43051e-06)
+scale = Vector2(1.14176, 0.889223)
+shape = SubResource("CapsuleShape2D_jfpki")
+
+[node name="FlashHitTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="barrelbreak" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_t8a4s")
+
+[connection signal="timeout" from="FlashHitTimer" to="." method="_on_FlashHitTimer_timeout"]

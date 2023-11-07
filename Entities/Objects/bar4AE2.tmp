@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://b71kmqiplxyv0"]
+
+[ext_resource type="Script" path="res://Entities/Objects/Barrel.gd" id="1_4u3ma"]
+[ext_resource type="PackedScene" uid="uid://ccpkn8u7u73jq" path="res://Collectables/Pickup/PickupFishBone.tscn" id="2_42umg"]
+[ext_resource type="Texture2D" uid="uid://dvn0adliiqfho" path="res://Assets/s_barrel_0.png" id="2_k0jik"]
+[ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="2_v5ijn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbuxx"]
+resource_local_to_scene = true
+shader = ExtResource("2_v5ijn")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfpki"]
+radius = 9.98338
+
+[node name="Barrel" type="StaticBody2D"]
+script = ExtResource("1_4u3ma")
+pickup_type = ExtResource("2_42umg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wbuxx")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_k0jik")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.14176, 0.889223)
+shape = SubResource("CapsuleShape2D_jfpki")
+
+[node name="FlashHitTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="FlashHitTimer" to="." method="_on_FlashHitTimer_timeout"]

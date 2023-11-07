@@ -2,7 +2,11 @@ extends Area2D
 
 class_name Pickup
 
+@export var resource_type : Resource
 @onready var collision_shape : CollisionShape2D = $CollisionShape2D
+
+func _ready():
+	connect("body_entered", _on_body_entered)
 
 var launch_velocity : Vector2 = Vector2.ZERO
 var move_duration : float = 0
@@ -25,3 +29,11 @@ func launch(velocity : Vector2, duration : float):
 	move_duration = duration
 	time_since_launch = 0
 	launching = true
+
+func _on_body_entered(body):
+	var inventory = body.find_child("Fishventory")
+	
+	if (inventory):
+		inventory.add_resources(resource_type, 1)
+		print("Collected fish! Total fish: ", inventory.get_fish_value())
+		queue_free()

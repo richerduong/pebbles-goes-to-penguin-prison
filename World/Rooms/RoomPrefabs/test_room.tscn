@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://j4c6ktggpp42"]
+
+[ext_resource type="PackedScene" uid="uid://ckn4oeyvujo0a" path="res://Tileset/tile_map.tscn" id="2_1vl2l"]
+[ext_resource type="TileSet" uid="uid://bp2iacl7yc504" path="res://Tileset/prison_tileset.tres" id="2_lsty8"]
+[ext_resource type="PackedScene" uid="uid://cgtt51gelur8x" path="res://World/Rooms/prison_door.tscn" id="3_clmt3"]
+[ext_resource type="PackedScene" uid="uid://drxk1ac83qn5k" path="res://Collectables/Guns/machinegun_collectable.tscn" id="4_mn7ae"]
+[ext_resource type="PackedScene" uid="uid://3npb3tvfm4h7" path="res://Collectables/Guns/shotgun_collectable.tscn" id="5_f177f"]
+[ext_resource type="PackedScene" uid="uid://b71kmqiplxyv0" path="res://Entities/Objects/barrel_fish.tscn" id="6_begxr"]
+[ext_resource type="PackedScene" uid="uid://c1j8acm6ymuju" path="res://Entities/Enemies/PolarBear/polar_bear.tscn" id="8_a8ksv"]
+[ext_resource type="PackedScene" uid="uid://dnubvl46cxjvk" path="res://Entities/Objects/barrel_bone.tscn" id="11_gkyh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1hso"]
+size = Vector2(331, 305)
+
+[node name="Room" type="Node2D"]
+
+[node name="PebblesSpawn" type="Node2D" parent="."]
+position = Vector2(142, 38)
+
+[node name="TileMap" parent="." instance=ExtResource("2_1vl2l")]
+tile_set = ExtResource("2_lsty8")
+layer_0/tile_data = PackedInt32Array(-65536, 0, 0, -65535, 589824, 0, -65534, 0, 0, 3, 0, 1, 4, 131072, 0, 5, 589824, 0, 6, 65536, 1, 65535, 262144, 1, -65529, 327680, 1, -65528, 131072, 3, 8, 131072, 3, 65544, 131072, 3, 65534, 0, 3, 131070, 0, 3, 196606, 0, 3, -2, 0, 2, -1, 262144, 3, -65537, 0, 2, -131072, 65536, 2, -131071, 65536, 2, -131070, 65536, 2, -131069, 131072, 2, -65533, 196608, 3, -65532, 65536, 2, -65531, 65536, 2, -65530, 262144, 3, -131066, 0, 2, -131065, 65536, 2, -131064, 131072, 2, 131080, 131072, 4, 262142, 458752, 3, 262143, 458752, 4, 196608, 458752, 4, 196609, 458752, 4, 196610, 458752, 4, 196611, 262144, 4, 262141, 0, 2, 327677, 0, 3, 393213, 0, 3, 589821, 0, 4, 589822, 65536, 4, 589823, 65536, 4, 524288, 65536, 4, 524289, 65536, 4, 524290, 65536, 4, 524291, 65536, 4, 458749, 0, 3, 524285, 0, 3, 524292, 65536, 4, 524293, 65536, 4, 524294, 65536, 4, 524295, 65536, 4, 131079, 65536, 4, 131078, 196608, 2, 196614, 196608, 3, 196615, 65536, 2, 196616, 131072, 2, 262152, 131072, 3, 327688, 131072, 3, 393224, 131072, 3, 458760, 131072, 3, 524296, 131072, 4, 327678, 196608, 1, 327679, 0, 0, 262144, 131072, 0, 262145, 458752, 0, 262146, 262144, 0, 262147, 65536, 1, 262150, 0, 1, 262151, 0, 0, 393214, 65536, 5, 458750, 131072, 6, 458751, 131072, 5, 524287, 65536, 6, 393215, 262144, 6, 524286, 65536, 5, 458752, 65536, 6, 393216, 131072, 5, 327680, 327680, 5, 327681, 0, 5, 393217, 131072, 6, 458753, 65536, 5, 458754, 0, 5, 393218, 0, 5, 327682, 131072, 6, 327683, 262144, 5, 393219, 131072, 5, 458755, 0, 6, 458756, 262144, 6, 393220, 262144, 6, 327684, 196608, 6, 327685, 65536, 6, 393221, 196608, 6, 458757, 131072, 6, 458758, 131072, 6, 393222, 196608, 6, 327686, 262144, 6, 327687, 131072, 5, 393223, 65536, 6, 458759, 327680, 5, 262148, 65536, 6, 262149, 131072, 6, 196613, 327680, 5, 196612, 0, 6, 131076, 65536, 5, 131077, 65536, 5, 65541, 327680, 5, 65540, 327680, 5, 65542, 0, 5, 65543, 0, 6, 7, 0, 5, 65539, 0, 5, 65538, 131072, 5, 2, 0, 6, 1, 65536, 6, 0, 327680, 6, 65536, 327680, 6, 131071, 196608, 6, 196607, 0, 6, 131072, 327680, 5, 131073, 327680, 6, 65537, 327680, 5, 131074, 0, 6, 131075, 196608, 5)
+
+[node name="DoorToStart" parent="." instance=ExtResource("3_clmt3")]
+position = Vector2(128, 0)
+next_room = "res://World/Rooms/RoomPrefabs/starting_room.tscn"
+
+[node name="DoorToBigRoom" parent="." instance=ExtResource("3_clmt3")]
+position = Vector2(224, 128)
+next_room = "res://World/Rooms/RoomPrefabs/big_room.tscn"
+
+[node name="CameraArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CameraBounds" type="CollisionShape2D" parent="CameraArea"]
+visible = false
+position = Vector2(95.5, 111.5)
+shape = SubResource("RectangleShape2D_n1hso")
+
+[node name="MachinegunCollectable" parent="." instance=ExtResource("4_mn7ae")]
+position = Vector2(210, 222)
+
+[node name="ShotgunCollectable" parent="." instance=ExtResource("5_f177f")]
+position = Vector2(45, 47)
+
+[node name="Barrel" parent="." instance=ExtResource("6_begxr")]
+position = Vector2(-45, 158)
+
+[node name="Barrel2" parent="." instance=ExtResource("11_gkyh5")]
+position = Vector2(241, -2)
+
+[node name="polar-bear-slap" parent="." instance=ExtResource("8_a8ksv")]
+position = Vector2(-6, 209)
+
+[node name="polar-bear-slap2" parent="." instance=ExtResource("8_a8ksv")]
+position = Vector2(130, 230)

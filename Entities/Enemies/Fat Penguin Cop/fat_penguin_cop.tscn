@@ -1,8 +1,3 @@
-[gd_scene load_steps=33 format=3 uid="uid://cfyn5xxip2okh"]
-
-[ext_resource type="Script" path="res://Entities/Enemies/Fat Penguin Cop/fat_penguin_cop.gd" id="1_rkrr8"]
-[ext_resource type="Texture2D" uid="uid://cbt25cu4v7qkf" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/penguin-police.png" id="2_2gou8"]
-[ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="2_ob8wy"]
 [ext_resource type="Texture2D" uid="uid://d25u4luifj0pd" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/death/police_death1.png" id="3_a8v5y"]
 [ext_resource type="Texture2D" uid="uid://dtkj5cimi878f" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/police_guard_slap_frames.png" id="3_c4i3h"]
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="3_g3ud3"]
@@ -11,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://biwmbpmxmqiyd" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/death/police_death4.png" id="6_btskl"]
 [ext_resource type="Texture2D" uid="uid://dsrputjkimjfu" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/death/police_death5.png" id="7_lcgnq"]
 [ext_resource type="Texture2D" uid="uid://cfa07nvk34x4o" path="res://Entities/Enemies/Fat Penguin Cop/Sprites/penguin-police-run.png" id="9_th507"]
-[ext_resource type="Script" path="res://Guns/gun.gd" id="14_km2uv"]
-[ext_resource type="AudioStream" uid="uid://d3wk2f2csw6x4" path="res://Audio/gunshot.mp3" id="15_3gbfu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7x8rt"]
 height = 34.0

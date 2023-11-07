@@ -9,7 +9,7 @@ var health = 250
 var can_shoot = false
 var inSlapRadius = false
 var is_dead = false
-
+var knockback_val = 25
 
 # Flash Hit
 @onready var sprite = $AnimatedSprite2D
@@ -37,7 +37,7 @@ func _physics_process(_delta):
 	update_health()
 
 	if pebbles_chase:
-		player = get_node("../" + _get_target_name())
+		player = load("res://Entities/Player/pebbles.tscn").instantiate()
 		# Old Speed calculation
 		#position += (target.position - position)/speed
 		#var direction = (player.position - self.position).normalized()
@@ -64,7 +64,7 @@ func _on_detection_radius_body_entered(body):
 		target = body
 		pebbles_chase = true
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, bullet: Bullet ) -> void:
 	if is_dead:  # If the enemy is already dead, don't process further damage
 		return
 	
@@ -73,10 +73,13 @@ func take_damage(damage: int) -> void:
 	update_health() # Update the health bar after changing health value
 	flash() # Flash hit
 	
+	var knockback = bullet.linear_velocity.normalized() * knockback_val
+	position += knockback
+	
 	# Make the enemy chase Pebbles when taking damage
 	if target == null or target.name != _get_target_name():
 		pebbles_chase = true
-		player = get_node("../" + _get_target_name())
+		player = load("res://Entities/Player/pebbles.tscn").instantiate()
 		target = player
 	
 	if health <= 0:

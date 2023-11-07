@@ -25,6 +25,10 @@ func aim(target: Vector2) -> float:
 		flip_v = true # left
 	return rotation
 
+func get_type():
+	if inventory_item and inventory_item.shooter:
+		return inventory_item.shooter.type()
+
 func shoot() -> bool:
 	if inventory_item and inventory_item.shooter: 
 		var room_node = get_node("/root/World/RoomManager/Room")

@@ -8,10 +8,13 @@ const door_atlas_coords_opened: Vector2i = Vector2i(9,1)
 var door_texture_frame: int = 0
 var interactable: bool = false
 
+@onready var doorSound = $doorSound
+
 func _physics_process(_delta):
 	if interactable and Input.is_action_just_pressed("interact"):
+		doorSound.play()
+		await get_tree().create_timer(0.15).timeout
 		RoomManager.switch_room(next_room)
-		
 
 func _on_interactable_area_area_entered(area):
 	if area.name == "PlayerInteractArea":

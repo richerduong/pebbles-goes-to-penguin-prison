@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgtt51gelur8x"]
+[gd_scene load_steps=6 format=3 uid="uid://cgtt51gelur8x"]
 
 [ext_resource type="TileSet" uid="uid://bp2iacl7yc504" path="res://Tileset/prison_tileset.tres" id="1_7roi2"]
 [ext_resource type="Script" path="res://World/Rooms/door_behavior.gd" id="2_t5w5b"]
 [ext_resource type="Texture2D" uid="uid://cakwqxt6ffxh3" path="res://Assets/GUI/Keys/interact_key.png" id="3_j3tvq"]
+[ext_resource type="AudioStream" uid="uid://c3firf8f32c67" path="res://Audio/doorSound.mp3" id="4_joq2y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qx2sl"]
 radius = 11.0454
@@ -23,6 +24,10 @@ shape = SubResource("CircleShape2D_qx2sl")
 visible = false
 position = Vector2(16, -26)
 texture = ExtResource("3_j3tvq")
+
+[node name="doorSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_joq2y")
+volume_db = -3.0
 
 [connection signal="area_entered" from="InteractableArea" to="." method="_on_interactable_area_area_entered"]
 [connection signal="area_exited" from="InteractableArea" to="." method="_on_interactable_area_area_exited"]

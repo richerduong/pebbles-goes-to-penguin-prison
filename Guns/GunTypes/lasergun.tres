@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://dcss456mult3e"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_rrk85"]
+[ext_resource type="Resource" uid="uid://dnt3uyam8tkmx" path="res://Guns/GunShooterResources/lasergun_shooter.tres" id="2_2ia4h"]
+[ext_resource type="Texture2D" uid="uid://bug2srjgcuriv" path="res://Assets/Guns/shark gun.png" id="3_gng5f"]
+
+[resource]
+script = ExtResource("1_rrk85")
+name = "Laser Gun"
+texture = ExtResource("3_gng5f")
+stackable = false
+shooter = ExtResource("2_2ia4h")
+muzzle = Vector2(30, 5)
+path_to_collectable_scene = "res://Collectables/Guns/lasergun_collectable.tscn"
