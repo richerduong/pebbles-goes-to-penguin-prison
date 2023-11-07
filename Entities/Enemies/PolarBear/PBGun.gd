@@ -6,8 +6,6 @@ class_name PBGun
 @export var inventory_item: InventoryItem
 
 func _ready():
-	position.y = position.y + 7
-	offset.x = 7
 	update_texture()
 
 func update_texture() -> void:

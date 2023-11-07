@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c1j8acm6ymuju"]
+[gd_scene load_steps=30 format=3 uid="uid://c1j8acm6ymuju"]
 
 [ext_resource type="Shader" path="res://Entities/Enemies/hit_flash.gdshader" id="1_gk0nd"]
 [ext_resource type="Texture2D" uid="uid://ds1rqwa2cldf1" path="res://Entities/Enemies/PolarBear/polar_bear_death2.png" id="1_qq04s"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cfvm5wq7q5yci" path="res://Entities/Enemies/PolarBear/polar_bear_walking.png" id="2_sbjkr"]
 [ext_resource type="Texture2D" uid="uid://ciwea3dily156" path="res://Entities/Enemies/PolarBear/polar_bear_2.png" id="3_fkkvj"]
 [ext_resource type="Theme" uid="uid://dap64i2o0ns0x" path="res://Misc/Theme.tres" id="4_p6t7c"]
+[ext_resource type="Script" path="res://Entities/Enemies/PolarBear/PBGun.gd" id="6_ubr5q"]
 [ext_resource type="AudioStream" uid="uid://dfsp13wh0lwrc" path="res://Audio/polarSlap.mp3" id="7_l2txk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ne1sd"]
@@ -165,6 +166,7 @@ sprite_frames = SubResource("SpriteFrames_1btrm")
 animation = &"slap"
 
 [node name="PBGun" type="Sprite2D" parent="."]
+script = ExtResource("6_ubr5q")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -10.0

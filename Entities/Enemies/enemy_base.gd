@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @export var bullet_scene: PackedScene
-var player
 var speed = 150
 var pebbles_chase = false
 var target = null
@@ -9,6 +8,7 @@ var health = 250
 var can_shoot = false
 var inSlapRadius = false
 var is_dead = false
+var has_initialized_target = false
 
 
 # Flash Hit
@@ -30,19 +30,15 @@ func _get_walk_animation_name():
 
 # Common logic
 func _ready():
+	target = load("res://Entities/Player/pebbles.tscn").instantiate()
+	add_child(target)
 	$AnimatedSprite2D.connect("animation_finished", Callable(self, "_on_AnimatedSprite2D_animation_finished"))
 #	$AnimatedSprite2D.connect("slap_timer", Callable(self, "_on_slap_timer_timeout"))
 
 func _physics_process(_delta):
 	update_health()
 
-	if pebbles_chase:
-		player = load("res://Entities/Player/pebbles.tscn").instantiate()
-		# Old Speed calculation
-		#position += (target.position - position)/speed
-		#var direction = (player.position - self.position).normalized()
-		
-		# New Speed calculation
+	if pebbles_chase and target:
 		var direction = (target.position - position).normalized()
 		position += direction * speed * _delta
 
@@ -60,7 +56,7 @@ func _physics_process(_delta):
 
 
 func _on_detection_radius_body_entered(body):
-	if body.name == _get_target_name():
+	if body and body.name == _get_target_name():
 		target = body
 		pebbles_chase = true
 
@@ -76,8 +72,8 @@ func take_damage(damage: int) -> void:
 	# Make the enemy chase Pebbles when taking damage
 	if target == null or target.name != _get_target_name():
 		pebbles_chase = true
-		player = load("res://Entities/Player/pebbles.tscn").instantiate()
-		target = player
+		target = get_node("res://Entities/Player/PebblesSprite") # You might want to get an existing node instead
+		add_child(target) 
 	
 	if health <= 0:
 		die()

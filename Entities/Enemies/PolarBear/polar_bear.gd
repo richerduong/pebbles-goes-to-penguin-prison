@@ -6,6 +6,7 @@ var shotgun_resource = preload("res://Guns/GunTypes/revolver.tres")
 var has_gun = false
 
 
+
 func _ready():
 	randomize()  # Randomize the random number generator
 	if randi() % 2 == 0:
@@ -27,7 +28,7 @@ func instantiate_shotgun_gun():
 
 func shoot_at_target():
 	if has_gun:
-		gun_instance.aim(player.global_position)
+		gun_instance.aim(target.global_position)
 		# Call the shoot method of the PBGun instance
 		if gun_instance.shoot():
 			print("Gun fired!")
