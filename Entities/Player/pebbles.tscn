@@ -551,6 +551,8 @@ energy = 0.15
 texture = SubResource("GradientTexture2D_6oxwi")
 texture_scale = 3.0
 
+[node name="SlideTimer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="PlayerInteractArea" to="." method="_on_pickup_area_area_entered"]
 [connection signal="area_exited" from="PlayerInteractArea" to="." method="_on_pickup_area_area_exited"]
 [connection signal="timeout" from="Camera2D/ShakeTimer" to="Camera2D" method="_on_shake_cooldown_timeout"]

@@ -30,6 +30,9 @@ var is_eating = false
 var current_animation: String = "idle"
 var is_sliding = false 
 
+var slide_cooldown : float = 0.5
+var current_slide_cooldown : float = 0.0
+
 var enemy_inattack_range = false
 var enemy_attack_cooldown = true
 
@@ -56,6 +59,25 @@ func _physics_process(_delta):
 	if last_health != health:
 		last_health = health
 		get_node("/root/World").update_player_health(health, max_health)
+		
+	# Add a 2-second cooldown to the "slide" action
+	if Input.is_action_pressed("slide") and not is_sliding and current_slide_cooldown <= 0:
+		is_sliding = true
+		slide()
+		slideSound.pitch_scale = randf_range(0.8, 1.2)
+		slideSound.play()
+
+		# Set the cooldown timer
+		current_slide_cooldown = slide_cooldown
+		
+	if is_sliding:
+		invincible = true
+	else:
+		invincible = false
+	# press shift to heal (eat)
+	
+	if current_slide_cooldown > 0:
+		current_slide_cooldown -= _delta
 
 func handle_player_shoot() -> void:
 	gun.aim(get_global_mouse_position())
@@ -117,14 +139,7 @@ func handle_player_interactions() -> void:
 	if Input.is_action_just_pressed("scroll down"):
 		inventory_node.scroll_down()
 		
-	if Input.is_action_pressed("slide") and not is_sliding:
-		if not is_sliding:  # Slide action is initiated
-			is_sliding = true
-			slide()
-			slideSound.pitch_scale = randf_range(0.8, 1.2)
-			slideSound.play()
-	
-	# press shift to heal (eat)
+		
 	if Input.is_action_just_pressed("eat"):
 		if fishventory.get_fish_value() > 0:
 			is_eating = true
