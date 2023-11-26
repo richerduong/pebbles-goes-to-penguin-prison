@@ -31,6 +31,19 @@ var is_sliding = false
 var collectables: Array[Area2D]
 var invincible: bool = false
 
+# Added from old-main
+#@export var sprite_2d: Sprite2D
+@export var damage: int = 1
+#@onready var gameOver = $GameOverScreen
+#@onready var sprite2 = $Sprite2D
+
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
+
+signal health_update
+signal pebbles_death
+signal pebbles_shoot
+
 func _ready():
 	animation_tree.active = true
 
@@ -170,20 +183,11 @@ func heal(amount: int):
 
 	if health > max_health:
 		health = max_health
+		
+	health_update.emit(health, max_health)
 	#print("Health is: ", health)
 
 # Added from old-main
-#@export var sprite_2d: Sprite2D
-@export var damage: int = 1
-#@onready var gameOver = $GameOverScreen
-#@onready var sprite2 = $Sprite2D
-
-var enemy_inattack_range = false
-var enemy_attack_cooldown = true
-
-signal health_update
-signal pebbles_death
-signal pebbles_shoot
 
 func take_damage() -> void:
 	#damage is only going to be 1 for pebbles 
