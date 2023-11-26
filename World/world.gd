@@ -1,7 +1,7 @@
 extends Node
 class_name World
 
-@onready var player = load("res://Entities/Player/pebbles.tscn").instantiate()
+@onready var childNode = $RoomManager
 @onready var player_health_bar_ui = $GUI/Panel/HeartsContainer
 #@onready var player_ammo_ui = $"GUI/Panel/Ammo Amount"
 
@@ -11,7 +11,7 @@ static var INPUT_SCHEME: INPUT_SCHEMES = INPUT_SCHEMES.KEYBOARD_AND_MOUSE
 
 func _ready():
 	init_room()
-	
+	var player = childNode.pebbles
 	player.health_update.connect(player_health_bar_ui.set_health)
 	#player.pebbles_shoot.connect(player_ammo_ui.set_ammo_amount)
 	
