@@ -26,6 +26,7 @@ func take_damage(damage: float, rotation: float) -> void:
 	if flash_on_hit:
 		flash()
 	if health < 0:
+		animation_player.stop()
 		if animation_player.has_animation("death"):
 			animation_player.play("death")
 		_death()
