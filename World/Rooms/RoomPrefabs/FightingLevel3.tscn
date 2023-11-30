@@ -1,13 +1,15 @@
-[gd_scene load_steps=29 format=3 uid="uid://ct16m35oho4tv"]
+[gd_scene load_steps=31 format=3 uid="uid://ct16m35oho4tv"]
 
 [ext_resource type="PackedScene" uid="uid://b8rqo3xqcfu1m" path="res://World/Rooms/Room.tscn" id="1_pdroj"]
 [ext_resource type="Texture2D" uid="uid://nqnbcdd3m2yh" path="res://Assets/Maps/fighting_level_3_closed.png" id="2_md6c6"]
 [ext_resource type="Script" path="res://World/Rooms/RoomPrefabs/prison_cell.gd" id="2_xxxo1"]
 [ext_resource type="Texture2D" uid="uid://cakwqxt6ffxh3" path="res://Assets/GUI/Keys/interact_key.png" id="3_6l0y4"]
+[ext_resource type="Texture2D" uid="uid://cvc3m1agq7m47" path="res://Assets/Maps/fighting_level_3_open.png" id="3_g4rky"]
 [ext_resource type="PackedScene" uid="uid://cedpgh0klnx6y" path="res://Entities/Enemies/BaseEnemy/SealPolice/seal_police.tscn" id="4_0fp4j"]
 [ext_resource type="Script" path="res://World/Rooms/RoomPrefabs/TorchFlame.gd" id="5_iof12"]
 [ext_resource type="PackedScene" uid="uid://xrolridxojk0" path="res://Entities/Enemies/BaseEnemy/PBPolice/pb_police.tscn" id="5_whf78"]
 [ext_resource type="PackedScene" uid="uid://dcy38limnheyy" path="res://Entities/Enemies/BaseEnemy/Ninja/snowman.tscn" id="6_m16jw"]
+[ext_resource type="PackedScene" uid="uid://drxk1ac83qn5k" path="res://Collectables/Guns/machinegun_collectable.tscn" id="9_ey3hx"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xst36"]
 vertices = PackedVector2Array(-227, 223, -229, 89, -205, 106, -200, 133, -149, 225, -168, 142, -168, -65, -177, -115, -68, -117, -140, -296, -84, -300, -84, -282, -139, -230, -69, -230, -18, -280, 53, -266, 99, 370, -100, 370, -98, 284, 99, 281, 142, -268, 143, -118, -68, -188, -16, -302, 52, -304, -139, -159, -139, -188, -70, -158, 156, 61, 228, 62, 226, 227, 143, 227, 185, -118, 191, -56, 191, -11, 155, -10, -161, -18, -183, 13, 113, 246, -112, 247, -161, 105, -182, 53, -173, 82)
@@ -139,6 +141,7 @@ turbulence_noise_scale = 1.12
 [node name="Room" instance=ExtResource("1_pdroj")]
 script = ExtResource("2_xxxo1")
 next_room_path = "res://World/Rooms/RoomPrefabs/Courtyard.tscn"
+open_door_map_texture = ExtResource("3_g4rky")
 
 [node name="MapSprite" parent="." index="0"]
 texture = ExtResource("2_md6c6")
@@ -245,6 +248,9 @@ script = ExtResource("5_iof12")
 position = Vector2(3.55556, -15.2131)
 amount = 25
 process_material = SubResource("ParticleProcessMaterial_k7qfh")
+
+[node name="MachinegunCollectable" parent="." index="12" instance=ExtResource("9_ey3hx")]
+position = Vector2(-33, -291)
 
 [connection signal="body_entered" from="DoorInteractableArea" to="." method="_on_door_interactable_area_body_entered"]
 [connection signal="body_exited" from="DoorInteractableArea" to="." method="_on_door_interactable_area_body_exited"]
