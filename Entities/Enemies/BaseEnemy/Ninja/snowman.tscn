@@ -453,7 +453,7 @@ entity_node = NodePath("..")
 entity_sprite_node = NodePath("../EnemySprite")
 movement_component = NodePath("../MovementComponent")
 animation_tree = NodePath("../AnimationTree")
-health = 300.0
+health = 500.0
 animation_player = NodePath("../AnimationPlayer")
 
 [node name="MovementComponent" type="Node" parent="." index="9" node_paths=PackedStringArray("entity_node", "entity_sprite_node", "animation_tree", "shadow_sprite_node")]
