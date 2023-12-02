@@ -46,7 +46,7 @@ func apply_game_data(data):
 		var world_instance = world_scene.instantiate()
 		get_tree().root.add_child(world_instance)
 		get_tree().current_scene = world_instance
-		
+	
 	if (data["current_room"]):
 		RoomManager.switch_room(data["current_room"])
 		var player = RoomManager.pebbles

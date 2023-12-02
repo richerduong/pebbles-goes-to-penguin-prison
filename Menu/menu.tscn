@@ -124,12 +124,15 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Options")
 theme = ExtResource("9_ts0n3")
 theme_override_constants/outline_size = 3
 text = "Play"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Exit")
 theme = ExtResource("9_ts0n3")
 theme_override_constants/outline_size = 3
 text = "Settings"
@@ -247,7 +250,6 @@ text = "Master"
 
 [node name="master_slider" parent="Volume/MarginContainer/VBoxContainer" instance=ExtResource("10_3ymch")]
 layout_mode = 2
-bus_name = "Master"
 
 [node name="background_vol" type="Label" parent="Volume/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -257,7 +259,6 @@ text = "Music"
 
 [node name="background_slider" parent="Volume/MarginContainer/VBoxContainer" instance=ExtResource("10_3ymch")]
 layout_mode = 2
-bus_name = "Background"
 
 [node name="soundeffects_vol" type="Label" parent="Volume/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -267,7 +268,6 @@ text = "Sound Effects"
 
 [node name="soundeffects_slider" parent="Volume/MarginContainer/VBoxContainer" instance=ExtResource("10_3ymch")]
 layout_mode = 2
-bus_name = "Sound Effects"
 
 [node name="HSeparator" type="HSeparator" parent="Volume/MarginContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -383,6 +383,7 @@ layout_mode = 2
 [node name="SaveSlot1" type="Button" parent="SaveSlot/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+focus_neighbor_right = NodePath("Trash1")
 theme = ExtResource("9_ts0n3")
 theme_override_constants/outline_size = 2
 text = "Save Slot 1

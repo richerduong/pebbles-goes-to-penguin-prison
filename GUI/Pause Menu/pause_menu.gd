@@ -8,6 +8,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		pausemenu.visible = true
 		get_tree().paused = true
+		$MarginContainer/VBoxContainer/Resume.grab_focus()
 
 func _on_resume_pressed():
 	pausemenu.visible = false
@@ -25,11 +26,13 @@ func _on_volume_pressed():
 	$CenterContainer.visible = false
 	$MarginContainer.visible = false
 	volumemenu.visible = true
+	$Volume/MarginContainer/VBoxContainer/master_slider.grab_focus()
 	
 func _on_input_type_button_pressed():
 	$CenterContainer.visible = false
 	$MarginContainer.visible = false
 	inputTypeMenu.visible = true
+	$InputType/VBoxContainer2/InputTypeButton.grab_focus()
 
 func _on_back_pressed():
 	volumemenu.visible = false
@@ -37,12 +40,12 @@ func _on_back_pressed():
 	$CenterContainer.visible = true
 	$MarginContainer.visible = true
 	pausemenu.visible = true
+	$MarginContainer/VBoxContainer/Resume.grab_focus()
 
 func _on_save_pressed():
 	var pebbles_instance = RoomManager.pebbles
 	var game_data = get_game_data()
 	SaveSystem.save_game(SaveSystem.current_slot, game_data)
-	
 	
 func get_game_data():
 	var pebbles_instance = RoomManager.pebbles
@@ -81,7 +84,6 @@ func _get_node_position(node: Node) -> Variant:
 	if node is Node2D:  # For 2D nodes
 		return node.global_position
 	return null  # For nodes that don't have a position property
-
 
 func _on_input_type_button_item_selected(index):
 	if index != -1:

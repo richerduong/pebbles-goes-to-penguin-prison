@@ -9,3 +9,5 @@ max_value = 4.0
 step = 0.001
 value = 4.0
 script = ExtResource("1_blrao")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

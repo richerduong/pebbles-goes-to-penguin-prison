@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1it1to6ngg3i"]
+[gd_scene load_steps=15 format=3 uid="uid://c1it1to6ngg3i"]
 
 [ext_resource type="Script" path="res://Intro/intro_cutscene.gd" id="1_45tkm"]
 [ext_resource type="Texture2D" uid="uid://dyvmrwqwmqob1" path="res://Assets/Storyboard/sb1.png" id="2_4hxrr"]
@@ -720,6 +720,20 @@ _data = {
 "RESET": SubResource("Animation_rx8kt")
 }
 
+[sub_resource type="GDScript" id="GDScript_supph"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	grab_focus()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [node name="intro_cutscene" type="Node2D"]
 script = ExtResource("1_45tkm")
 
@@ -910,6 +924,7 @@ theme = ExtResource("9_p87sr")
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 60
 text = "Skip"
+script = SubResource("GDScript_supph")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 544)
